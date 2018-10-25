@@ -1,0 +1,13 @@
+body{
+    background-color: #222222;
+    color: #AAAAAA;
+
+}
+
+.bottombar{
+    position: absolute;
+    color: #FFFFFF;
+    bottom: 0;
+
+
+}

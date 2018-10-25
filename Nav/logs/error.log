@@ -1,0 +1,38 @@
+[Thu Oct 18 12:47:48.272720 2018] [ssl:warn] [pid 7768:tid 744] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Oct 18 12:47:48.308666 2018] [ssl:warn] [pid 7768:tid 744] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Oct 18 12:47:48.338585 2018] [mpm_winnt:notice] [pid 7768:tid 744] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Thu Oct 18 12:47:48.338585 2018] [mpm_winnt:notice] [pid 7768:tid 744] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Thu Oct 18 12:47:48.338585 2018] [core:notice] [pid 7768:tid 744] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Thu Oct 18 12:47:48.341602 2018] [mpm_winnt:notice] [pid 7768:tid 744] AH00418: Parent: Created child process 10644
+[Thu Oct 18 12:47:48.711098 2018] [ssl:warn] [pid 10644:tid 636] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Oct 18 12:47:48.740020 2018] [ssl:warn] [pid 10644:tid 636] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Oct 18 12:47:48.765950 2018] [mpm_winnt:notice] [pid 10644:tid 636] AH00354: Child: Starting 150 worker threads.
+[Thu Oct 18 12:48:05.316109 2018] [mpm_winnt:notice] [pid 7768:tid 744] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu Oct 18 12:48:07.619490 2018] [mpm_winnt:notice] [pid 10644:tid 636] AH00364: Child: All worker threads have exited.
+[Thu Oct 18 12:48:07.643931 2018] [mpm_winnt:notice] [pid 7768:tid 744] AH00430: Parent: Child process 10644 exited successfully.
+[Thu Oct 18 12:51:20.206433 2018] [mpm_winnt:notice] [pid 1356:tid 752] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Thu Oct 18 12:51:20.206433 2018] [mpm_winnt:notice] [pid 1356:tid 752] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Thu Oct 18 12:51:20.206433 2018] [core:notice] [pid 1356:tid 752] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Thu Oct 18 12:51:20.209437 2018] [mpm_winnt:notice] [pid 1356:tid 752] AH00418: Parent: Created child process 11676
+[Thu Oct 18 12:51:20.733084 2018] [mpm_winnt:notice] [pid 11676:tid 672] AH00354: Child: Starting 150 worker threads.
+[Thu Oct 18 12:53:43.740680 2018] [mpm_winnt:notice] [pid 1356:tid 752] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu Oct 18 12:53:45.741735 2018] [mpm_winnt:notice] [pid 11676:tid 672] AH00364: Child: All worker threads have exited.
+[Thu Oct 18 12:53:45.771716 2018] [mpm_winnt:notice] [pid 1356:tid 752] AH00430: Parent: Child process 11676 exited successfully.
+[Thu Oct 18 12:53:47.347302 2018] [mpm_winnt:notice] [pid 11288:tid 764] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Thu Oct 18 12:53:47.347302 2018] [mpm_winnt:notice] [pid 11288:tid 764] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Thu Oct 18 12:53:47.347302 2018] [core:notice] [pid 11288:tid 764] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Thu Oct 18 12:53:47.350294 2018] [mpm_winnt:notice] [pid 11288:tid 764] AH00418: Parent: Created child process 9064
+[Thu Oct 18 12:53:47.754307 2018] [mpm_winnt:notice] [pid 9064:tid 736] AH00354: Child: Starting 150 worker threads.
+[Thu Oct 18 13:06:31.057353 2018] [php7:crit] [pid 9064:tid 1964] [client ::1:51652] PHP Parse error:  syntax error, unexpected '<' in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 27
+[Thu Oct 18 13:11:31.676153 2018] [php7:warn] [pid 9064:tid 1964] [client ::1:52089] PHP Warning:  scandir(/files,/files): Det g\xef\xbf\xbdr inte att hitta filen. (code: 2) in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
+[Thu Oct 18 13:11:31.676153 2018] [php7:warn] [pid 9064:tid 1964] [client ::1:52089] PHP Warning:  scandir(/files): failed to open dir: No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
+[Thu Oct 18 13:11:31.677147 2018] [php7:warn] [pid 9064:tid 1964] [client ::1:52089] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
+[Thu Oct 18 13:12:23.614271 2018] [php7:warn] [pid 9064:tid 1964] [client ::1:52167] PHP Warning:  scandir(../files,../files): Det g\xef\xbf\xbdr inte att hitta filen. (code: 2) in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
+[Thu Oct 18 13:12:23.614271 2018] [php7:warn] [pid 9064:tid 1964] [client ::1:52167] PHP Warning:  scandir(../files): failed to open dir: No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
+[Thu Oct 18 13:12:23.614271 2018] [php7:warn] [pid 9064:tid 1964] [client ::1:52167] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
+[Thu Oct 18 13:12:34.571120 2018] [php7:warn] [pid 9064:tid 1964] [client ::1:52182] PHP Warning:  scandir(/files,/files): Det g\xef\xbf\xbdr inte att hitta filen. (code: 2) in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
+[Thu Oct 18 13:12:34.571120 2018] [php7:warn] [pid 9064:tid 1964] [client ::1:52182] PHP Warning:  scandir(/files): failed to open dir: No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
+[Thu Oct 18 13:12:34.571120 2018] [php7:warn] [pid 9064:tid 1964] [client ::1:52182] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
+[Thu Oct 25 12:12:32.648063 2018] [php7:warn] [pid 9064:tid 1964] [client 127.0.0.1:52146] PHP Warning:  scandir(/files,/files): Det g\xef\xbf\xbdr inte att hitta filen. (code: 2) in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
+[Thu Oct 25 12:12:32.649085 2018] [php7:warn] [pid 9064:tid 1964] [client 127.0.0.1:52146] PHP Warning:  scandir(/files): failed to open dir: No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
+[Thu Oct 25 12:12:32.649085 2018] [php7:warn] [pid 9064:tid 1964] [client 127.0.0.1:52146] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26

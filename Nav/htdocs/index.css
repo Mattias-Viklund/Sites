@@ -1,0 +1,50 @@
+body{
+    background-color: #222222;
+    color: #F0F0F0;
+
+    font-family: "lucida console", monospace, serif;
+
+}
+
+a{
+    font-size: 22px;
+    display: block;
+    padding: 8px;
+    background-color: #252525;
+    text-decoration: 0;
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #252525;
+
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #333333;
+}
+
+.bottombar{
+    position: absolute;
+    color: #FFFFFF;
+    bottom: 0;
+
+
+}

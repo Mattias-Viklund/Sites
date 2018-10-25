@@ -1,0 +1,17 @@
+body{
+    background-color: #222222;
+    color: #AAAAAA;
+
+}
+
+.game{
+    position: relative;
+
+}
+
+.bottombar{
+    position: absolute;
+    bottom: 0;
+
+
+}

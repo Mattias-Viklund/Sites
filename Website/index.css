@@ -1,0 +1,29 @@
+body{
+    background-color: #222222;
+    color: #AAAAAA;
+
+}
+
+a{
+    text-decoration: underline;
+    border-bottom: 0px;
+
+}
+
+.site-header{
+    text-align: center;
+    border-bottom: 0px;
+
+}
+
+.game{
+    position: relative;
+
+}
+
+.bottombar{
+    position: absolute;
+    bottom: 0;
+
+
+}
