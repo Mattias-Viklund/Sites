@@ -1,7 +1,10 @@
 var textboxValue = "";
+var game;
 
-function StartGame() {
-
+function StartGame(name) {  
+    game = new Game(name);
+    console.log(name);
+    game.GameLoop();
 
 }
 
@@ -11,48 +14,27 @@ function SendInput() {
 }
 
 class Game {
-    player;
-    world;
-    input;
-
     Game(playerName) {
         this.player = new Player(playerName);
         this.world = new World(20);
-        this.input = new Input();
 
     }
 
     GameLoop() {
         this.Update();
-        this.input.WaitForInput();
-
-    }
-
-    Update(){
-
-
-    }
-}
-
-class Input {
-    waitingForInput = false;
-
-    
-    Input() {
 
 
     }
 
-    WaitForInput() {
+    Update() {
 
 
     }
 }
 
 class Command {
-    command = "";
-
-    Command() {
+    Command(commandName) {
+        this.command = commandName;
 
     }
 
@@ -63,9 +45,6 @@ class Command {
 }
 
 class Player {
-    name = ""
-    inventory;
-
     Player(name) {
         this.name = name;
         this.inventory = new Inventory();
@@ -74,9 +53,6 @@ class Player {
 }
 
 class World {
-    size = 0;
-    tileRows;
-
     World(size) {
         this.size = size;
         this.tileRows = new TileRow[size];
@@ -93,9 +69,6 @@ class World {
 }
 
 class TileRow {
-    size = 0;
-    tiles;
-
     TileRow(size) {
         this.size = size;
         this.tiles = new MapTile[size];
@@ -104,36 +77,30 @@ class TileRow {
     }
 
     FillTiles() {
-        for (i = 0; i < this.size; i++)
-        {
+        for (i = 0; i < this.size; i++) {
             tiles[i] = new MapTile();
 
         }
     }
 }
 
+var TileTypes = Object.freeze({
+    FOREST: 0,
+    TOWN: 1,
+    LAKE: 2,
+    CAVE: 3,
+    FIELD: 4
+
+});
+
 class MapTile {
-    TileTypes = {
-        FOREST: 0,
-        TOWN: 1,
-        LAKE: 2,
-        CAVE: 3,
-        FIELD: 4
-
-    };
-
-    tileType;
-
-    MapTile(tileType){
+    MapTile(tileType) {
         this.tileType = tileType;
 
     }
 }
 
 class Inventory {
-    maxSize = 0;
-    items;
-
     Inventory(maxSize) {
         this.maxSize = maxSize;
         this.items = new BaseItem[maxSize];
@@ -155,9 +122,6 @@ class Inventory {
 }
 
 class BaseItem {
-    name = "";
-    value = 0;
-
     BaseItem(name, value) {
         this.name = name;
         this.value = value;
