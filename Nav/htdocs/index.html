@@ -2,25 +2,34 @@
 <html Lang="en">
 
 <head>
-	<title>ENTICER 340</title>
+	<title></title>
 	<link rel="stylesheet" href="index.css">
-	<link rel="shortcut icon" href="./content/images/favicon.ico" />
 
 </head>
 
 <body>
 	<nav>
 		<ul>
-			<li><a style="background-color: #444444">HOME</a>
-			<li><a href="./content/schematics/schematics.html">SCHEMATICS</a></li>
-			<li><a href="./content/modifications/modifications.html">MODIFICATIONS</a></li>
-			<li><a href="./about.html">ABOUT</a></li>
+			<li><a>HOME</a>
 		</ul>
 	</nav>
+
+	<div class="content">
+		<form action="/php/dothethang.php" method="POST">
+			<br>
+			First name:<br>
+			<input class="inputbox" type="text" name="firstname" value=""><br>
+			Last name:<br>
+			<input class="inputbox" type="text" name="lastname" value=""><br>
+			Password:<br>
+			<input class="inputbox" type="password" name="password" value=""><br><br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
 
 	<div class="bottombar">
 		<p>Made by Mattias (Mew_) Viklund</p>
 		<p>Sweden</p>
-	
+
 	</div>
 </body>

@@ -36,3 +36,58 @@
 [Thu Oct 25 12:12:32.648063 2018] [php7:warn] [pid 9064:tid 1964] [client 127.0.0.1:52146] PHP Warning:  scandir(/files,/files): Det g\xef\xbf\xbdr inte att hitta filen. (code: 2) in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
 [Thu Oct 25 12:12:32.649085 2018] [php7:warn] [pid 9064:tid 1964] [client 127.0.0.1:52146] PHP Warning:  scandir(/files): failed to open dir: No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
 [Thu Oct 25 12:12:32.649085 2018] [php7:warn] [pid 9064:tid 1964] [client 127.0.0.1:52146] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\content\\schematics\\schematics.php on line 26
+[Mon Nov 05 13:38:03.625015 2018] [core:warn] [pid 3288:tid 772] AH00098: pid file C:/Users/elev/Desktop/Sites/Nav/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Nov 05 13:38:03.825489 2018] [mpm_winnt:notice] [pid 3288:tid 772] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Mon Nov 05 13:38:03.825489 2018] [mpm_winnt:notice] [pid 3288:tid 772] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Mon Nov 05 13:38:03.825489 2018] [core:notice] [pid 3288:tid 772] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Mon Nov 05 13:38:03.825489 2018] [mpm_winnt:notice] [pid 3288:tid 772] AH00418: Parent: Created child process 5488
+[Mon Nov 05 13:38:04.925757 2018] [mpm_winnt:notice] [pid 5488:tid 796] AH00354: Child: Starting 150 worker threads.
+[Mon Nov 26 12:45:29.236110 2018] [mpm_winnt:notice] [pid 3288:tid 772] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Nov 26 12:45:31.314108 2018] [mpm_winnt:notice] [pid 5488:tid 796] AH00364: Child: All worker threads have exited.
+[Mon Nov 26 12:45:31.819153 2018] [mpm_winnt:notice] [pid 3288:tid 772] AH00430: Parent: Child process 5488 exited successfully.
+[Mon Nov 26 12:46:18.878645 2018] [mpm_winnt:notice] [pid 3232:tid 764] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Mon Nov 26 12:46:18.878645 2018] [mpm_winnt:notice] [pid 3232:tid 764] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Mon Nov 26 12:46:18.878645 2018] [core:notice] [pid 3232:tid 764] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Mon Nov 26 12:46:18.878645 2018] [mpm_winnt:notice] [pid 3232:tid 764] AH00418: Parent: Created child process 5280
+[Mon Nov 26 12:46:20.074257 2018] [mpm_winnt:notice] [pid 5280:tid 656] AH00354: Child: Starting 150 worker threads.
+[Mon Nov 26 13:10:11.801368 2018] [mpm_winnt:notice] [pid 3232:tid 764] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Nov 26 13:10:13.866249 2018] [mpm_winnt:notice] [pid 5280:tid 656] AH00364: Child: All worker threads have exited.
+[Mon Nov 26 13:10:14.100286 2018] [mpm_winnt:notice] [pid 3232:tid 764] AH00430: Parent: Child process 5280 exited successfully.
+[Mon Nov 26 13:10:45.761863 2018] [mpm_winnt:notice] [pid 3436:tid 736] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Mon Nov 26 13:10:45.761863 2018] [mpm_winnt:notice] [pid 3436:tid 736] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Mon Nov 26 13:10:45.761863 2018] [core:notice] [pid 3436:tid 736] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Mon Nov 26 13:10:45.761863 2018] [mpm_winnt:notice] [pid 3436:tid 736] AH00418: Parent: Created child process 6500
+[Mon Nov 26 13:10:47.153527 2018] [mpm_winnt:notice] [pid 6500:tid 688] AH00354: Child: Starting 150 worker threads.
+[Tue Nov 27 13:18:31.995462 2018] [mpm_winnt:notice] [pid 3436:tid 736] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue Nov 27 13:18:34.054109 2018] [mpm_winnt:notice] [pid 6500:tid 688] AH00364: Child: All worker threads have exited.
+[Tue Nov 27 13:18:34.277556 2018] [mpm_winnt:notice] [pid 3436:tid 736] AH00430: Parent: Child process 6500 exited successfully.
+[Tue Nov 27 13:19:17.509114 2018] [mpm_winnt:notice] [pid 3456:tid 128] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Tue Nov 27 13:19:17.517142 2018] [mpm_winnt:notice] [pid 3456:tid 128] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Tue Nov 27 13:19:17.517142 2018] [core:notice] [pid 3456:tid 128] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Tue Nov 27 13:19:17.519170 2018] [mpm_winnt:notice] [pid 3456:tid 128] AH00418: Parent: Created child process 6696
+[Tue Nov 27 13:19:18.833808 2018] [mpm_winnt:notice] [pid 6696:tid 760] AH00354: Child: Starting 150 worker threads.
+[Tue Nov 27 15:15:30.898292 2018] [mpm_winnt:notice] [pid 3456:tid 128] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue Nov 27 15:15:32.918177 2018] [mpm_winnt:notice] [pid 6696:tid 760] AH00364: Child: All worker threads have exited.
+[Tue Nov 27 15:15:32.978399 2018] [mpm_winnt:notice] [pid 3456:tid 128] AH00430: Parent: Child process 6696 exited successfully.
+[Tue Nov 27 15:15:46.080965 2018] [mpm_winnt:notice] [pid 10404:tid 680] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Tue Nov 27 15:15:46.080965 2018] [mpm_winnt:notice] [pid 10404:tid 680] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Tue Nov 27 15:15:46.080965 2018] [core:notice] [pid 10404:tid 680] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Tue Nov 27 15:15:46.080965 2018] [mpm_winnt:notice] [pid 10404:tid 680] AH00418: Parent: Created child process 9564
+[Tue Nov 27 15:15:46.508107 2018] [mpm_winnt:notice] [pid 9564:tid 696] AH00354: Child: Starting 150 worker threads.
+[Tue Nov 27 15:46:52.942894 2018] [php7:error] [pid 9564:tid 1968] [client 127.0.0.1:50764] PHP Fatal error:  Uncaught Error: Call to undefined function test_input() in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php:6\nStack trace:\n#0 {main}\n  thrown in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php on line 6, referer: http://127.0.0.1:8080/
+[Tue Nov 27 15:48:07.714275 2018] [php7:error] [pid 9564:tid 1968] [client 127.0.0.1:50773] PHP Fatal error:  Uncaught Error: Call to undefined function test_input() in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php:6\nStack trace:\n#0 {main}\n  thrown in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php on line 6, referer: http://127.0.0.1:8080/
+[Tue Nov 27 15:48:34.947444 2018] [php7:notice] [pid 9564:tid 1968] [client 127.0.0.1:50775] PHP Notice:  Undefined index: name in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php on line 6, referer: http://127.0.0.1:8080/
+[Tue Nov 27 15:48:40.008934 2018] [php7:notice] [pid 9564:tid 1968] [client 127.0.0.1:50776] PHP Notice:  Undefined index: name in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php on line 6, referer: http://127.0.0.1:8080/
+[Wed Nov 28 13:00:27.459046 2018] [php7:notice] [pid 9564:tid 1968] [client 127.0.0.1:51359] PHP Notice:  Undefined variable: firstname in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php on line 22, referer: http://127.0.0.1:8080/
+[Wed Nov 28 13:00:27.459046 2018] [php7:notice] [pid 9564:tid 1968] [client 127.0.0.1:51359] PHP Notice:  Undefined variable: lastname in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php on line 22, referer: http://127.0.0.1:8080/
+[Wed Nov 28 13:00:27.460043 2018] [php7:notice] [pid 9564:tid 1968] [client 127.0.0.1:51359] PHP Notice:  Undefined variable: password in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php on line 22, referer: http://127.0.0.1:8080/
+[Wed Nov 28 13:01:10.194018 2018] [php7:notice] [pid 9564:tid 1968] [client 127.0.0.1:51362] PHP Notice:  Undefined variable: firstname in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php on line 22, referer: http://127.0.0.1:8080/
+[Wed Nov 28 13:01:10.194018 2018] [php7:notice] [pid 9564:tid 1968] [client 127.0.0.1:51362] PHP Notice:  Undefined variable: lastname in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php on line 22, referer: http://127.0.0.1:8080/
+[Wed Nov 28 13:01:10.194018 2018] [php7:notice] [pid 9564:tid 1968] [client 127.0.0.1:51362] PHP Notice:  Undefined variable: password in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php on line 22, referer: http://127.0.0.1:8080/
+[Wed Nov 28 13:01:14.908809 2018] [php7:notice] [pid 9564:tid 1968] [client 127.0.0.1:51362] PHP Notice:  Undefined variable: firstname in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php on line 22, referer: http://127.0.0.1:8080/
+[Wed Nov 28 13:01:14.908809 2018] [php7:notice] [pid 9564:tid 1968] [client 127.0.0.1:51362] PHP Notice:  Undefined variable: lastname in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php on line 22, referer: http://127.0.0.1:8080/
+[Wed Nov 28 13:01:14.908809 2018] [php7:notice] [pid 9564:tid 1968] [client 127.0.0.1:51362] PHP Notice:  Undefined variable: password in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\php\\dothethang.php on line 22, referer: http://127.0.0.1:8080/
+[Wed Nov 28 13:59:03.738545 2018] [access_compat:error] [pid 9564:tid 1952] [client 127.0.0.1:51722] AH01797: client denied by server configuration: C:/Users/elev/Desktop/Sites/Nav/htdocs/php/dothethang.php
+[Wed Nov 28 13:59:11.358127 2018] [access_compat:error] [pid 9564:tid 1952] [client 127.0.0.1:51725] AH01797: client denied by server configuration: C:/Users/elev/Desktop/Sites/Nav/htdocs/php/
+[Wed Nov 28 13:59:22.354443 2018] [access_compat:error] [pid 9564:tid 1952] [client 127.0.0.1:51726] AH01797: client denied by server configuration: C:/Users/elev/Desktop/Sites/Nav/htdocs/php/dothethang.php, referer: http://127.0.0.1:8080/
+[Fri Nov 30 10:02:47.202458 2018] [mpm_winnt:crit] [pid 9564:tid 696] AH02538: Child: Parent process exited abruptly. Child process is ending
