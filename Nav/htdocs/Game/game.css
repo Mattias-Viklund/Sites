@@ -1,8 +1,35 @@
 body{
-    background-color: #222;
+    background-color: #000;
     color: #F0F0F0;
-
     font-family: "lucida console", monospace, serif;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.htmlConsole{
+    padding: 0px;
+    margin: 0px;
+    background-color: #010101;
+    color: green;
+
+}
+
+.innerConsole{
+    padding: 50px;
+    padding-left: 40%;
+
+}
+
+input{
+    background-color: #000;
+    color: white;
+    font-size: 25px;
+
+}
+
+.nav{
+    margin-bottom: 50px;
 
 }
 
@@ -17,7 +44,7 @@ a{
 ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding-left: 15px;
     overflow: hidden;
 
 }
@@ -43,7 +70,7 @@ li a:hover {
     position: absolute;
     color: #FFFFFF;
     bottom: 0;
-
+    padding-left: 15px;
 
 }
 
