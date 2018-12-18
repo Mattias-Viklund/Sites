@@ -7,17 +7,22 @@ body{
 
 }
 
+.labels{
+    text-align: center;
+
+}
+
 .htmlConsole{
     padding: 0px;
     margin: 0px;
     background-color: #010101;
-    color: green;
+    height: 563px;
+    color: #11db22;
 
 }
 
 .innerConsole{
-    padding: 50px;
-    padding-left: 40%;
+    height: 563px;
 
 }
 
@@ -70,6 +75,8 @@ li a:hover {
     position: absolute;
     color: #FFFFFF;
     bottom: 0;
+    color: gray;
+    font-size: 12px;
     padding-left: 15px;
 
 }

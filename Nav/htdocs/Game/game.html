@@ -1,48 +1,74 @@
 <!DOCTYPE html>
+
 <head>
 	<title></title>
 	<link rel="stylesheet" href="game.css">
-	<script src="Game.js"></script>
+	<script src="Game/Commands/commands.js"></script>
+	<script src="Game/Items/baseitem.js"></script>
+	<script src="Game/World/world.js"></script>
+	<script src="Game/Player/inventory.js"></script>
+	<script src="Game/Player/player.js"></script>
+	<script src="Game/gamelog.js"></script>
+	<script src="Game/game.js"></script>
 
 </head>
 
 <body>
 	<nav class="nav">
 		<ul>
-			<li><a>HOME</a>
+			<li><a>About</a>
 		</ul>
 	</nav>
 
-    <script>
-        StartGame("Aids");
-    </script>
-
 	<div class="htmlConsole">
 		<div class="innerConsole">
-			<p id="console00">Welcome</p>
-			<p id="console01">to</p>
-			<p id="console02">the</p>
-			<p id="console03">Game</p>
-			<p id="console04"></p>
-			<p id="console05">Thank</p>
-			<p id="console06">you</p>
-			<p id="console07">for</p>
-			<p id="console08">coming</p>
-			<p id="console09">here.</p>
-			<p id="console10"></p>
-			<p id="console11">Maybe</p>
-			<p id="console12">you'll</p>
-			<p id="console13">enjoy</p>
-			<p id="console14">this</p>
-			<p id="console15"></p>
+			<span class="labels">
+				<p id="console0">""</p>
+				<p id="console1">""</p>
+				<p id="console2">""</p>
+				<p id="console3">""</p>
+				<p id="console4">""</p>
+				<p id="console5">""</p>
+				<p id="console6">""</p>
+				<p id="console7">""</p>
+				<p id="console8">""</p>
+				<p id="console9">""</p>
+				<p id="console10">""</p>
+				<p id="console11">""</p>
+				<p id="console12">""</p>
+				<p id="console13">""</p>
+				<p id="console14">""</p>
+				<p id="console15">""</p>
+				<p id="console16">""</p>
+				<p id="console17">""</p>
+			</span>
 
-			<form name="playerInputForm">
-				<input type="text" name="playerInput">
-				
-			</form>
+			<input type="text" name="playerInput" autocomplete="off" id="input" style="width: 50%; margin-left: 25%;" onkeypress="return keyPressed(event)">
+
+			<script type="text/javascript">
+				function keyPressed(e) {
+					var keynum;
+
+					if (window.event) { // IE                    
+						keynum = e.keyCode;
+					} else if (e.which) { // Netscape/Firefox/Opera                   
+						keynum = e.which;
+					}
+
+					// Enter keypress
+					if (keynum == 13) {
+						var textIn = document.getElementById('input').value;
+						console.log("Sent input: " + textIn);
+						SendKey(textIn);
+
+						document.getElementById('input').value = '';
+
+					}
+				}
+			</script>
 		</div>
 	</div>
-
+	
 	<div class="bottombar">
 		<p>Made by Mattias (Mew_) Viklund</p>
 		<p>Sweden</p>
