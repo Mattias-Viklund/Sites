@@ -1,73 +1,46 @@
-class Command {
-    constructor(commandName) {
-        this.commandName = commandName;
+console.log("Populating commands.");
 
-    }
+var help = new Command(new Array("help", "h"));
+var clear = new Command(new Array("clear"));
 
-    GetCommand() {
-        return this;
+// Movement
+var moveUp = new Command(new Array("up", "u"));
+var moveDown = new Command(new Array("down", "d"));
+var moveSouth = new Command(new Array("south", "s"));
+var moveNorth = new Command(new Array("north", "n"));
+var moveEast = new Command(new Array("east", "e"));
+var moveWest = new Command(new Array("west", "w"));
 
-    }
+// Shop
+var buy = new Command(new Array("buy", "b"));
+var list = new Command(new Array("list", "li"));
+var sell = new Command(new Array("sell"));
 
-    GetCommandName() {
-        return this._commandName;
+// Equipment
+var wield = new Command(new Array("wield", "wie"));
+var wear = new Command(new Array("wear"));
+var remove = new Command(new Array("remove", "rem"));
 
-    }
+function InitializeCommands(){
+    help.SetAction(Help)
+    clear.SetAction(game.GetLog().Clear);
 
-    SetAction(action) {
-        this.action = action;
+    AddCommand(help);
+    AddCommand(clear);
 
-    }
+    AddCommand(moveUp);
+    AddCommand(moveDown);
+    AddCommand(moveSouth);
+    AddCommand(moveNorth);
+    AddCommand(moveEast);
+    AddCommand(moveWest);
+    
+    AddCommand(buy);
+    AddCommand(list);
+    AddCommand(sell);
 
-    UseCommand() {
-        this._action();
-
-    }
-}
-
-var commands = [100];
-var commandCount = 0;
-
-function GetCommands() {
-    console.log(commands);
-
-    for (var i = 0; i < commandCount; i++)
-        console.log(commands[i]);
-
-    return commands;
-
-}
-
-function GetCommand(commandName) {
-    for (var i = 0; i < commandCount; i++) {
-        var c = commands[i];
-
-        if (c.GetCommandName() == commandName) {
-            console.log("YEET, "+commandName);
-
-        }
-    }
-}
-
-function Populate() {
-    commands[0] = new Command("help").GetCommand();
-    commands[0].SetAction(Help);
-    commands[1] = new Command("north").GetCommand();
-    commands[2] = new Command("south").GetCommand();
-    commands[3] = new Command("west").GetCommand();
-    commands[4] = new Command("east").GetCommand();
-    commands[5] = new Command("down").GetCommand();
-    commands[6] = new Command("up").GetCommand();
-
-    commandCount = 7;
-
-}
-
-console.log(new Command("ACTUAL AIDS"));
-
-Populate();
-
-function Help() {
-    console.log(help);
+    AddCommand(wield);
+    AddCommand(wear);
+    AddCommand(remove);
 
 }
