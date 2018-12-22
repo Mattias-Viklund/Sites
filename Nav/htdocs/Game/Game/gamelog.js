@@ -9,7 +9,7 @@ class Gamelog {
     }
 
     Clear() {
-        this.SetAll("");
+        this.SetAll("\"\"");
 
     }
 

@@ -23,7 +23,7 @@ var remove = new Command(new Array("remove", "rem"));
 
 function InitializeCommands(){
     help.SetAction(Help)
-    clear.SetAction(game.GetLog().Clear);
+    clear.SetAction(Clear);
 
     AddCommand(help);
     AddCommand(clear);
@@ -42,5 +42,11 @@ function InitializeCommands(){
     AddCommand(wield);
     AddCommand(wear);
     AddCommand(remove);
+
+}
+
+// General Game Functions
+function Clear(){
+    game.GetLog().Clear();
 
 }

@@ -1,7 +1,7 @@
 function Help(args) {
     if (args.length != 0) {
-        switch (args) {
-            case "new": break;
+        switch (args.trim()) {
+            case "new": HelpNew(); break;
             case "movement": break;
             case "objects": break;
             case "communication": break;
@@ -38,6 +38,7 @@ function HelpDefault(){
 }
 
 function HelpNew() {
+    console.log("Aids")
     game.GetLog().Push("To start playing the game");
 
 }
