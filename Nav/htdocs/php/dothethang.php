@@ -1,12 +1,11 @@
 <?php 
     // define variables and set to empty values
-    $output = $password = $firstname = $lastname = "";
+    $output = $password = $username = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $firstname = test_input($_POST["firstname"]);
-        $lastname = test_input($_POST["lastname"]);
+        $firstname = test_input($_POST["username"]);
         $password = test_input($_POST["password"]);
-        try_login($firstname." ".$lastname.", ".$password);
+        try_login($firstname.", ".$password);
 
     }
 

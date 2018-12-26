@@ -1,4 +1,5 @@
 function Help(args) {
+    game.GetLog().Pop();
     if (args.length != 0) {
         switch (args.trim()) {
             case "new": HelpNew(); break;

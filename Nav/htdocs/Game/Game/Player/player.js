@@ -4,4 +4,9 @@ class Player {
         this.inventory = new Inventory();
 
     }
+
+    GetName(){
+        return this.name;
+
+    }
 }

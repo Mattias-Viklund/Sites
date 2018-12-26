@@ -1,7 +1,12 @@
 console.log("Populating commands.");
 
+// Additional Commands
 var help = new Command(new Array("help", "h"));
 var clear = new Command(new Array("clear"));
+var gameCommand = new Command(new Array("game"));
+
+// Developer commands
+var echo = new Command(new Array("echo"));
 
 // Movement
 var moveUp = new Command(new Array("up", "u"));
@@ -24,9 +29,15 @@ var remove = new Command(new Array("remove", "rem"));
 function InitializeCommands(){
     help.SetAction(Help)
     clear.SetAction(Clear);
+    gameCommand.SetAction(GameCommand);
+
+    echo.SetAction(Echo)
 
     AddCommand(help);
     AddCommand(clear);
+    AddCommand(gameCommand);
+
+    AddCommand(echo);
 
     AddCommand(moveUp);
     AddCommand(moveDown);
@@ -48,5 +59,11 @@ function InitializeCommands(){
 // General Game Functions
 function Clear(){
     game.GetLog().Clear();
+
+}
+
+function GameCommand(){
+    var log = game.GetLog();
+    log.Push('Yes, '+game.GetPlayer().GetName()+', this is the game. ');
 
 }

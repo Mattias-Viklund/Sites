@@ -1,7 +1,30 @@
-<!DOCTYPE html>
+<?php 
+    // define variables and set to empty values
+    $password = $username = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $username = test_input($_POST["username"]);
+        $password = test_input($_POST["password"]);
+
+    }
+
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+
+    }
+?>
 
 <head>
-	<title></title>
+	<title>THE GAME</title>
+
+	<script> 
+		console.log("Username: " + "<?php echo "$username"?>");
+		console.log("Password: " + "<?php echo "$password"?>");
+	</script>
+
 	<link rel="stylesheet" href="game.css">
 	<script src="globals.js"></script>
 	<script src="Game/Commands/command.js"></script>
@@ -14,6 +37,9 @@
 	<!-- COMMANDS -->
 	<script src="Game/Commands/Commands/help.js"></script>
 	<script src="Game/Commands/Commands/move.js"></script>
+	<script src="Game/Commands/Commands/devcommands.js"></script>	
+	<script src="Game/Commands/Commands/player.js"></script>	
+	<script src="Game/Commands/Commands/shop.js"></script>	
 
 	<script src="Game/Commands/commands.js"></script>
 
@@ -58,8 +84,10 @@
 
 					if (window.event) { // IE                    
 						keynum = e.keyCode;
+						
 					} else if (e.which) { // Netscape/Firefox/Opera                   
 						keynum = e.which;
+
 					}
 
 					// Enter keypress

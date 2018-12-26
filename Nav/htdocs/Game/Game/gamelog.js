@@ -19,6 +19,8 @@ class Gamelog {
 
         var lastLine = message;
         var temp = "";
+        this.invisibleMessage = document.getElementById('console0');
+
         for (var i = logLabels - 1; i >= 0; i--) {
             var line = document.getElementById('console' + i);
 
@@ -27,6 +29,23 @@ class Gamelog {
             lastLine = temp;
 
         }
+    }
+
+    Pop() {
+        var messages = new Array();
+        for (var i = 0; i < logLabels-1; i++) {
+            messages.push(document.getElementById('console' + i).innerHTML);
+
+        }
+
+        for (var i = 0; i < logLabels - 1; i++) {
+            console.log('At position '+i+': '+messages[i])
+            document.getElementById('console' + (i+1)).innerHTML = messages[i];
+
+        }
+
+        document.getElementById('console0').innerHTML = this.invisibleMessage;
+
     }
 
     SetAll(text) {
