@@ -20,11 +20,6 @@
 <head>
 	<title>THE GAME</title>
 
-	<script> 
-		console.log("Username: " + "<?php echo "$username"?>");
-		console.log("Password: " + "<?php echo "$password"?>");
-	</script>
-
 	<link rel="stylesheet" href="game.css">
 	<script src="globals.js"></script>
 	<script src="Game/Commands/command.js"></script>
@@ -100,6 +95,15 @@
 
 					}
 				}
+			</script>
+
+			<!-- Start Game -->
+			<script>
+				console.log("Username: " + "<?php echo "$username"?>");
+				console.log("Password: " + "<?php echo "$password"?>");
+
+				StartGame("<?php echo "$username"?>");
+
 			</script>
 		</div>
 	</div>

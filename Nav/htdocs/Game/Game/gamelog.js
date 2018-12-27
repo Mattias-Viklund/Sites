@@ -1,6 +1,12 @@
 var logLabels = 18;
 
 class Gamelog {
+    constructor() {
+        console.log('GameLog constructor');
+        this.Print();
+
+    }
+
     Print() {
         for (var i = 0; i < logLabels; i++) {
             console.log(document.getElementById('console' + i).innerHTML);
@@ -19,6 +25,7 @@ class Gamelog {
 
         var lastLine = message;
         var temp = "";
+
         this.invisibleMessage = document.getElementById('console0');
 
         for (var i = logLabels - 1; i >= 0; i--) {
@@ -33,14 +40,13 @@ class Gamelog {
 
     Pop() {
         var messages = new Array();
-        for (var i = 0; i < logLabels-1; i++) {
+        for (var i = 0; i < logLabels - 1; i++) {
             messages.push(document.getElementById('console' + i).innerHTML);
 
         }
 
         for (var i = 0; i < logLabels - 1; i++) {
-            console.log('At position '+i+': '+messages[i])
-            document.getElementById('console' + (i+1)).innerHTML = messages[i];
+            document.getElementById('console' + (i + 1)).innerHTML = messages[i];
 
         }
 

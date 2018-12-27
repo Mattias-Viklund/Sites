@@ -121,3 +121,8 @@
 [Fri Dec 14 11:39:41.645012 2018] [core:notice] [pid 3204:tid 684] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
 [Fri Dec 14 11:39:41.645012 2018] [mpm_winnt:notice] [pid 3204:tid 684] AH00418: Parent: Created child process 5496
 [Fri Dec 14 11:39:42.689641 2018] [mpm_winnt:notice] [pid 5496:tid 628] AH00354: Child: Starting 150 worker threads.
+[Thu Dec 27 19:40:55.673208 2018] [mpm_winnt:notice] [pid 1960:tid 768] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Thu Dec 27 19:40:55.673704 2018] [mpm_winnt:notice] [pid 1960:tid 768] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Thu Dec 27 19:40:55.674155 2018] [core:notice] [pid 1960:tid 768] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Thu Dec 27 19:40:55.676140 2018] [mpm_winnt:notice] [pid 1960:tid 768] AH00418: Parent: Created child process 7568
+[Thu Dec 27 19:40:56.324086 2018] [mpm_winnt:notice] [pid 7568:tid 772] AH00354: Child: Starting 150 worker threads.

@@ -1,12 +1,14 @@
 console.log("Populating commands.");
 
 // Additional Commands
-var help = new Command(new Array("help", "h"));
-var clear = new Command(new Array("clear"));
-var gameCommand = new Command(new Array("game"));
+var help = new Command(new Array("help", "h"), Help);
+var clear = new Command(new Array("clear"), Clear);
+var gameCommand = new Command(new Array("game"), GameCommand);
+var alias = new Command(new Array("alias"), Alias);
 
 // Developer commands
-var echo = new Command(new Array("echo"));
+var echo = new Command(new Array("echo"), Echo);
+var sendglobal = new Command(new Array("sendglobal"), SendGlobal, undefined, true);
 
 // Movement
 var moveUp = new Command(new Array("up", "u"));
@@ -18,7 +20,7 @@ var moveWest = new Command(new Array("west", "w"));
 
 // Shop
 var buy = new Command(new Array("buy", "b"));
-var list = new Command(new Array("list", "li"));
+var list = new Command(new Array("list", "li"), ListCommand);
 var sell = new Command(new Array("sell"));
 
 // Equipment
@@ -26,18 +28,16 @@ var wield = new Command(new Array("wield", "wie"));
 var wear = new Command(new Array("wear"));
 var remove = new Command(new Array("remove", "rem"));
 
-function InitializeCommands(){
-    help.SetAction(Help)
-    clear.SetAction(Clear);
-    gameCommand.SetAction(GameCommand);
+console.log("Commands populated.");
 
-    echo.SetAction(Echo)
-
+function AddAllCommands() {
     AddCommand(help);
     AddCommand(clear);
     AddCommand(gameCommand);
+    AddCommand(alias);
 
     AddCommand(echo);
+    AddCommand(sendglobal);
 
     AddCommand(moveUp);
     AddCommand(moveDown);
@@ -45,7 +45,7 @@ function InitializeCommands(){
     AddCommand(moveNorth);
     AddCommand(moveEast);
     AddCommand(moveWest);
-    
+
     AddCommand(buy);
     AddCommand(list);
     AddCommand(sell);
@@ -54,16 +54,28 @@ function InitializeCommands(){
     AddCommand(wear);
     AddCommand(remove);
 
+    InitalizeCommands();
+
 }
 
 // General Game Functions
-function Clear(){
+function Clear() {
     game.GetLog().Clear();
 
 }
 
-function GameCommand(){
+function GameCommand() {
     var log = game.GetLog();
-    log.Push('Yes, '+game.GetPlayer().GetName()+', this is the game. ');
+    log.Push('Yes, ' + game.GetPlayer().GetName() + ', this is the game. ');
+
+}
+
+//// STUBS ////
+function SendGlobal(message) {
+    if (message === "sendglobal")
+        return;
+
+    game.GetLog().Pop();
+    game.Send(message);
 
 }

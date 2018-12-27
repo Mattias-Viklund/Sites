@@ -2,12 +2,17 @@ var game;
 
 class Game {
     constructor(playerName) {
+        console.log("Creating Game!");
+
         this.log = new Gamelog();
+
         this.player = new Player(playerName);
         this.world = new World(10);
+
+        this.log.Print();
         this.log.Push("Welcome back, " + playerName);
 
-        InitializeCommands();
+        AddAllCommands();
 
     }
 
@@ -36,9 +41,8 @@ class Game {
     Handle(first, args) {
         var command = GetCommand(first);
 
-        if (command == null)
-        {
-            game.GetLog().Push("Command '"+first+"' does not exist.")
+        if (command == null) {
+            game.GetLog().Push("Command '" + first + "' does not exist.")
             return;
 
         }
@@ -75,7 +79,6 @@ class Game {
 
 window.onload = function () {
     document.getElementById("input").focus();
-    StartGame('dev');
 
 };
 
