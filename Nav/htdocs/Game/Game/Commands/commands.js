@@ -2,7 +2,7 @@ console.log("Populating commands.");
 
 // Additional Commands
 var help = new Command(new Array("help", "h"), Help);
-var clear = new Command(new Array("clear"), Clear);
+var clear = new Command(new Array("clear", "cls"), Clear);
 var gameCommand = new Command(new Array("game"), GameCommand);
 var alias = new Command(new Array("alias"), Alias);
 
