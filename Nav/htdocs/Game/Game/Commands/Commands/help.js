@@ -42,5 +42,6 @@ function HelpDefault() {
     game.GetLog().Push("\\t Help Miscellaneous");
     game.GetLog().Push("\\t Help Subjects");
     game.GetLog().Push("Also try checking out the FAQ with 'Help FAQ'");
+    game.GetLog().Push("\\i List all available commands by 'list commands'.");
 
 }

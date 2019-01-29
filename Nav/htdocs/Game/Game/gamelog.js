@@ -38,7 +38,7 @@ class Gamelog {
                     case 'w': lastColor = "#b70000"; break; // Warning
                     case 'i': lastColor = "#ffdd00"; break; // Info
                     case 'h': lastColor = "#008800"; break; // Hint
-                    case 't': lastColor = "#f442eb"; break; // Hint
+                    case 't': lastColor = "#f442eb"; break; // Tip
                     case 'n': lastColor = "#000000"; break; // Hint
 
                     default:

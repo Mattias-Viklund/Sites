@@ -19,15 +19,27 @@ function ListCommands(args) {
 
     console.log("Command page: " + page);
 
-    log.Push("Page "+page);
+    log.Push("Commands - page " + page + " (list other pages with 'li commands pagenumber')");
 
-    for (var i = ((page - 1) * logLabels) + 1; i < logLabels * page; i++) {
-        if (i >= commands.length) {
-            console.log("Command end: " + i);
+    console.log(commands);
+
+    var skipped = 0;
+    for (var i = ((page - 1) * logLabels) + 1; i < logLabels * page + skipped; i++) {
+        console.log(commands[i - 1 + skipped]);
+
+        if (commands[i+skipped-1] == undefined) {
+            console.log("Command end: " + i + skipped-1);
             break;
 
         }
-        log.Push(commands[i-1].GetName());
 
+        if (!commands[i + skipped - 1].GetHidden()) {
+            log.Push("\\t " + commands[i + skipped - 1].GetName());
+
+        } else {
+            skipped++;
+            i--;
+
+        }
     }
 }

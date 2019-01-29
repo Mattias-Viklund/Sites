@@ -32,6 +32,11 @@ class Command {
 
     }
 
+    GetHidden(){
+        return this.hideCommand;
+
+    }
+
     GetName() {
         if (!this.hideCommand)
             return this.commandNames[0];
