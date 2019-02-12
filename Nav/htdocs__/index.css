@@ -1,6 +1,6 @@
 body{
-    background-color: #FAFAFA;
-    color: #223322;
+    background-color: #222;
+    color: #F0F0F0;
 
     font-family: "lucida console", monospace, serif;
 
@@ -10,7 +10,6 @@ a{
     font-size: 22px;
     display: block;
     padding: 8px;
-    background-color: #252525;
     text-decoration: 0;
 
 }
@@ -20,7 +19,6 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #252525;
 
 }
 
@@ -46,5 +44,14 @@ li a:hover {
     color: #FFFFFF;
     bottom: 0;
 
+
+}
+
+.inputbox{
+    color: #AAA;
+    background-color: #000;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
 
 }
