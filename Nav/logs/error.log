@@ -153,3 +153,23 @@
 [Tue Jan 22 15:03:35.545198 2019] [mpm_winnt:notice] [pid 4564:tid 832] AH00422: Parent: Received shutdown signal -- Shutting down the server.
 [Tue Jan 22 15:03:37.561026 2019] [mpm_winnt:notice] [pid 7436:tid 628] AH00364: Child: All worker threads have exited.
 [Tue Jan 22 15:03:37.762900 2019] [mpm_winnt:notice] [pid 4564:tid 832] AH00430: Parent: Child process 7436 exited successfully.
+[Wed Feb 13 12:25:58.536566 2019] [mpm_winnt:notice] [pid 3728:tid 588] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Wed Feb 13 12:25:58.536566 2019] [mpm_winnt:notice] [pid 3728:tid 588] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Wed Feb 13 12:25:58.536566 2019] [core:notice] [pid 3728:tid 588] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Wed Feb 13 12:25:58.536566 2019] [mpm_winnt:notice] [pid 3728:tid 588] AH00418: Parent: Created child process 5772
+[Wed Feb 13 12:25:59.368059 2019] [mpm_winnt:notice] [pid 5772:tid 752] AH00354: Child: Starting 150 worker threads.
+[Thu Feb 21 12:21:40.083356 2019] [php7:error] [pid 5772:tid 1968] [client 127.0.0.1:52736] script 'C:/Users/elev/Desktop/Sites/Nav/htdocs/game.php' not found or unable to stat, referer: http://127.0.0.1:8080/
+[Thu Feb 21 12:21:41.717641 2019] [php7:error] [pid 5772:tid 1968] [client 127.0.0.1:52736] script 'C:/Users/elev/Desktop/Sites/Nav/htdocs/game.php' not found or unable to stat, referer: http://127.0.0.1:8080/
+[Thu Feb 21 12:21:55.697947 2019] [php7:error] [pid 5772:tid 1968] [client 127.0.0.1:52751] script 'C:/Users/elev/Desktop/Sites/Nav/htdocs/game.php' not found or unable to stat, referer: http://127.0.0.1:8080/
+[Thu Feb 21 12:59:28.103919 2019] [php7:notice] [pid 5772:tid 1968] [client 127.0.0.1:54811] PHP Notice:  Undefined variable: firstname in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\main.php on line 7, referer: http://127.0.0.1:8080/
+[Thu Feb 21 12:59:28.103919 2019] [php7:notice] [pid 5772:tid 1968] [client 127.0.0.1:54811] PHP Notice:  Undefined variable: password in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\main.php on line 21, referer: http://127.0.0.1:8080/
+[Thu Feb 21 12:59:28.103919 2019] [php7:notice] [pid 5772:tid 1968] [client 127.0.0.1:54811] PHP Notice:  Undefined variable: password in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\main.php on line 21, referer: http://127.0.0.1:8080/
+[Thu Feb 21 12:59:47.231744 2019] [php7:notice] [pid 5772:tid 1968] [client 127.0.0.1:54831] PHP Notice:  Undefined variable: password in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\main.php on line 21, referer: http://127.0.0.1:8080/
+[Thu Feb 21 12:59:47.231744 2019] [php7:notice] [pid 5772:tid 1968] [client 127.0.0.1:54831] PHP Notice:  Undefined variable: password in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\main.php on line 21, referer: http://127.0.0.1:8080/
+[Thu Feb 21 13:00:06.932762 2019] [php7:notice] [pid 5772:tid 1968] [client 127.0.0.1:54849] PHP Notice:  Undefined variable: username in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\main.php on line 21, referer: http://127.0.0.1:8080/
+[Thu Feb 21 13:00:06.932762 2019] [php7:notice] [pid 5772:tid 1968] [client 127.0.0.1:54849] PHP Notice:  Undefined variable: password in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\main.php on line 21, referer: http://127.0.0.1:8080/
+[Thu Feb 21 13:26:00.995620 2019] [php7:warn] [pid 5772:tid 1976] [client 127.0.0.1:56459] PHP Warning:  mysqli_connect(): (HY000/1049): Unknown database 'demo' in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\config.php on line 10
+[Thu Feb 21 13:30:43.288818 2019] [php7:notice] [pid 5772:tid 1968] [client 127.0.0.1:56840] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\login.php on line 59, referer: http://127.0.0.1:8080/login.php
+[Thu Feb 21 13:31:05.414877 2019] [php7:notice] [pid 5772:tid 1968] [client 127.0.0.1:56875] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\login.php on line 59, referer: http://127.0.0.1:8080/login.php
+[Thu Feb 21 13:31:08.475026 2019] [php7:error] [pid 5772:tid 1968] [client 127.0.0.1:56875] script 'C:/Users/elev/Desktop/Sites/Nav/htdocs/reset-password.php' not found or unable to stat, referer: http://127.0.0.1:8080/welcome.php
+[Thu Feb 21 13:31:27.598938 2019] [php7:notice] [pid 5772:tid 1968] [client 127.0.0.1:56892] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\login.php on line 59, referer: http://127.0.0.1:8080/login.php
