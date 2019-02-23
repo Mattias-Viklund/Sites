@@ -6,6 +6,7 @@ session_start();
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: welcome.php");
     exit;
+
 }
  
 // Include config file
@@ -65,17 +66,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             
                             // Redirect user to welcome page
                             header("location: welcome.php");
+                            
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
+
                         }
                     }
                 } else{
                     // Display an error message if username doesn't exist
                     $username_err = "No account found with that username.";
+
                 }
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
+
             }
         }
         
@@ -94,6 +99,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="forum.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; }

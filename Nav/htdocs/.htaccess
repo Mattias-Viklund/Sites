@@ -1,0 +1,4 @@
+order deny,allow
+IndexIgnore *
+
+ErrorDocument 404 /index.php
