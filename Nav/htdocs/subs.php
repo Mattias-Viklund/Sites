@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 }
 
-$sql = "SELECT * FROM posts;";
+$sql = "SELECT sub_name FROM subs;";
 $result = mysqli_query($link, $sql);
 
 ?>
@@ -36,37 +36,56 @@ $result = mysqli_query($link, $sql);
     <link rel="stylesheet" href="forum.css">
     <style type="text/css">
         body{ 
-            font: 14px sans-serif; text-align: center; 
+            font: 14px sans-serif; 
+            text-align: center; 
             
+        }
+
+        .sublist {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333333
+  
+        }
+
+        .subitem {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+            width: 20%;
+  
         }
     </style>
 </head>
 <body>
     <div class="page-header">
-        <h1>Showing all posts.</h1>
+        <h1>Showing all subs.</h1>
     </div>
 
     <div class="page-header">
-    <?php 
+        <ul class="sublist">
+        <?php 
         if (mysqli_num_rows($result) > 0) {
-            // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
-                $time = explode(" ", $row["created_at"]);
-                echo "<a class=\"post\">" . $time[0]. "(" . $time[1] . ") ". $row["post_username"] . ": ". $row["post_title"]." in " . $row["post_sub"] .".<br></a>";
-    
+                echo ("<li class=\"subitem\"><a href=/sub/".$row["sub_name"].">".$row["sub_name"]."</a></li>");
+
             }
         } else {
-            echo "0 results";
+            echo "No subs";
     
         }
-    
+
         mysqli_close($link);
         ?>
+        <ul>
     </div>
     <p>
-        <a href="post.php" class="btn btn-info">Post New Text</a>
-        <a href="createsub.php" class="btn btn-primary">Create New Sub</a>
-        <a href="subs.php" class="btn btn-link">Show Subs</a>
+        <a href="forum.php" class="btn btn-primary">Home</a>
     </p>
     <p>
         <a href="logout.php" class="btn btn-danger">Sign Out</a>

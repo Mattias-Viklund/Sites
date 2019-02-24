@@ -95,15 +95,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 function create_sub($sub_name){
-    mkdir("sub/".$sub_name, 0777, true);
+    mkdir(SERVER_EXECUTING_DIRECTORY."/sub/".trim($sub_name));
 
-    $copy = SERVER_EXECUTING_DIRECTORY."\\default\\sub\\index.php";
-    $copyto = SERVER_EXECUTING_DIRECTORY."\\sub\\".$sub_name."\\index.php";
+    $copy = SERVER_EXECUTING_DIRECTORY."/default/sub/index.php";
+    $copyto = SERVER_EXECUTING_DIRECTORY."/sub/".trim($sub_name)."/index.php";
 
     copy($copy, $copyto);
 
-    $copy = SERVER_EXECUTING_DIRECTORY."\\default\\sub\\index.css";
-    $copyto = SERVER_EXECUTING_DIRECTORY."\\sub\\".$sub_name."\\index.css";
+    $copy = SERVER_EXECUTING_DIRECTORY."/default/sub/index.css";
+    $copyto = SERVER_EXECUTING_DIRECTORY."/sub/".trim($sub_name)."/index.css";
 
     copy($copy, $copyto);
 }

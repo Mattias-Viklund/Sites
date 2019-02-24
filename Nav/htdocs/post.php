@@ -40,19 +40,52 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if (!empty(trim($_POST["sub"]))){
-        echo("<h1>".trim($_POST["SUB"])."</h1>");
-
         if (trim($_POST["sub"]) != "none"){
             $currentsub = trim($_POST["sub"]);
 
         }   
     } else {
-        $sub_err = "Please enter a sub.";
+        $sub_err = "Please enter a sub name.";
 
+    }
+
+    // Validate credentials
+    if(empty($sub_err)){
+        // Prepare a select statement
+        $sql = "SELECT sub_id FROM subs WHERE sub_name = ?";
+            
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_subname);
+                
+            // Set parameters
+            $param_subname = $currentsub;
+                
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                // Store result
+                mysqli_stmt_store_result($stmt);
+                    
+                // Check if username exists, if yes then verify password
+                if(mysqli_stmt_num_rows($stmt) == 1){                    
+
+                } else{
+                    // Display an error message if sub doesn't exist
+                    $sub_err = "No sub with that name found.";
+    
+                }
+            } else {
+                echo "Oops! Something went wrong. Please try again later.";
+    
+            }
+        }
+            
+        // Close statement
+         mysqli_stmt_close($stmt);
     }
     
     // Check input errors before inserting in database
-    if(empty($title_err) && !empty($username) && empty($sub_err)){
+    if(empty($title_err) && !empty($username) && !empty($currentsub) && empty($sub_err)){
         
         // Prepare an insert statement
         $sql = "INSERT INTO posts (post_title, post_text, post_username, post_sub) VALUES (?, ?, ?, ?)";

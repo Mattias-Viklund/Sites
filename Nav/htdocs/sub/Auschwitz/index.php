@@ -66,9 +66,8 @@ $sql = "SELECT * FROM posts WHERE post_sub='".$currentsub."';";
         ?>
     </div>
     <p>
-        <a href="../../post.php?sub=<?php echo($currentsub);?>" class="btn btn-success">Post New Text</a>
-        <a href="../../reset-password.php" class="btn btn-warning">Reset Your Password</a>
-        <a href="../../logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+        <a href="../../post.php" class="btn btn-info">Post New Text</a>
+        <a href="../../logout.php" class="btn btn-danger">Sign Out</a>
     </p>
 </body>
 </html>
