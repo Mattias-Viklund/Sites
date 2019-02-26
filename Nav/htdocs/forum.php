@@ -52,7 +52,7 @@ $result = mysqli_query($link, $sql);
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
                 $time = explode(" ", $row["created_at"]);
-                echo "<a class=\"post\">" . $time[0]. "(" . $time[1] . ") ". $row["post_username"] . ": ". $row["post_title"]." in " . $row["post_sub"] .".<br></a>";
+                echo "<a onclick=\"getComment(".$row["post_id"].")\">" . $time[0]. "(" . $time[1] . ") ". $row["post_username"] . ": ". $row["post_title"]. "<br></a>";
     
             }
         } else {
@@ -72,4 +72,28 @@ $result = mysqli_query($link, $sql);
         <a href="logout.php" class="btn btn-danger">Sign Out</a>
     </p>
 </body>
+<footer>
+    <div id="hidden_form_container" style="display:none;"></div>
+
+    <script>
+        function getComment (value) {
+        var theForm, newInput;
+        // Start by creating a <form>
+        theForm = document.createElement('form');
+        theForm.action = '../../comment.php';
+        theForm.method = 'get';
+        // Next create the <input>s in the form and give them names and values
+        newInput = document.createElement('input');
+        newInput.type = 'hidden';
+        newInput.name = 'post';
+        newInput.value = value;
+        // Now put everything together...
+        theForm.appendChild(newInput);
+        // ...and it to the DOM...
+        document.getElementById('hidden_form_container').appendChild(theForm);
+        // ...and submit it
+        theForm.submit();
+        }
+    </script>
+</footer>
 </html>
