@@ -1,13 +1,9 @@
 <?php
 // Initialize the session
 session_start();
- 
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
 
-}
+require_once "utils.php";
+check_login();
 
 // Include config file
 require_once "config.php";
@@ -36,8 +32,7 @@ $result = mysqli_query($link, $sql);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Forum All</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <title>Forum</title>
     <link rel="stylesheet" href="forum.css">
     <style type="text/css">
         body{ 
@@ -47,15 +42,15 @@ $result = mysqli_query($link, $sql);
     </style>
 </head>
 <body>
-    <div class="page-header">
     <?php 
     if ($result) {
         if (mysqli_num_rows($result) == 1) {
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
-                print_r ($row);
                 $time = explode(" ", $row["created_at"]);
-                echo "<a onclick=\"getComment(".$row["post_id"].")\"" . $time[0]. "(" . $time[1] . ") ". $row["post_username"] . ": ". $row["post_title"]. "<br></a>";
+                echo "<p style=\"text-align:left; margin: 0px; margin-top:100px; margin-left:100px; font-size: 2em; padding: 0px;\"><b>".$row["post_title"]."</b></h3>";
+                echo "<p style=\"text-align:left; margin: 0px; padding: 0px; margin-top: 5px; margin-left:100px;\">By <b>".$row["post_username"]."</b> to <b>".$row["post_sub"]."</b> at ".$time[0]." - ".$time[1]."</p>";
+                echo "<p style=\"text-align:left; margin: 0px; padding: 0px; margin-top: 20px; margin-left:100px; font-size: 2em;\">".$row["post_text"]."</p>";
     
             }
         }
@@ -66,14 +61,8 @@ $result = mysqli_query($link, $sql);
     
         mysqli_close($link);
         ?>
-    </div>
     <p>
-        <a href="post.php" class="btn btn-info">Post New Text</a>
-        <a href="createsub.php" class="btn btn-primary">Create New Sub</a>
-        <a href="subs.php" class="btn btn-link">Show Subs</a>
-    </p>
-    <p>
-        <a href="logout.php" class="btn btn-danger">Sign Out</a>
+        <a href="forum.php" class="btn btn-info">Back</a>
     </p>
 </body>
 </html>

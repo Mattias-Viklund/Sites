@@ -1,16 +1,13 @@
 <?php
-// Include config file
-require_once "config.php";
-
 // Initialize the session
 session_start();
  
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
+require_once "utils.php";
+check_login();
 
-}
+// Include config file
+require_once "config.php";
+require_once "server.php";
 
 // Define variables and initialize with empty values
 $title = "";
@@ -51,37 +48,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Validate credentials
     if(empty($sub_err)){
-        // Prepare a select statement
-        $sql = "SELECT sub_id FROM subs WHERE sub_name = ?";
-            
-        if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_subname);
-                
-            // Set parameters
-            $param_subname = $currentsub;
-                
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                // Store result
-                mysqli_stmt_store_result($stmt);
-                    
-                // Check if username exists, if yes then verify password
-                if(mysqli_stmt_num_rows($stmt) == 1){                    
+        if (!validate_select("sub_id", "subs", "sub_name", $currentsub)){
+            // Display an error message if sub doesn't exist
+            $sub_err = "No sub with that name found.";
 
-                } else{
-                    // Display an error message if sub doesn't exist
-                    $sub_err = "No sub with that name found.";
-    
-                }
-            } else {
-                echo "Oops! Something went wrong. Please try again later.";
-    
-            }
         }
-            
-        // Close statement
-         mysqli_stmt_close($stmt);
     }
     
     // Check input errors before inserting in database
@@ -120,7 +91,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 if(isset($_GET['sub'])){
-    $currentsub = $_GET['sub']; //some_value
+    $currentsub = trim($_GET['sub']); //some_value
 
 } else {
     $currentsub = "none";

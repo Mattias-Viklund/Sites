@@ -2,12 +2,8 @@
 // Initialize the session
 session_start();
  
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
-
-}
+require_once "utils.php";
+check_login();
 
 // Include config file
 require_once "config.php";
@@ -64,7 +60,7 @@ $result = mysqli_query($link, $sql);
         ?>
     </div>
     <p>
-        <a href="post.php" class="btn btn-info">Post New Text</a>
+        <a href="newpost.php" class="btn btn-info">Post New Text</a>
         <a href="createsub.php" class="btn btn-primary">Create New Sub</a>
         <a href="subs.php" class="btn btn-link">Show Subs</a>
     </p>
