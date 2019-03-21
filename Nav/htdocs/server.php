@@ -46,9 +46,10 @@ function get_valid_args(...$args){
 function validate_select($link, $select, $from, $where="", $is="")
 {
     $args = get_valid_args($select, $from, $where, $is);
+    echo ("<script>console.log(\"Valid args: ".$args."\");</script>");
 
     // Prepare a select statement
-    $sql = "SELECT ".$select." FROM `".$from."` WHERE ".$where." = ".$is;
+    $sql = "SELECT ".$select." FROM `".$from."` WHERE ".$where." = '".$is."'";
 
     if ($args == 2)
         $sql = "SELECT ".$select." FROM `".$from."`";
@@ -61,7 +62,7 @@ function validate_select($link, $select, $from, $where="", $is="")
             $result = mysqli_stmt_store_result($stmt);
                         
             // Check if it exists, if yes then return true
-            if(mysqli_stmt_num_rows($stmt) >= 1){
+            if(mysqli_stmt_num_rows($stmt) > 0){
                 // Close statement
                 mysqli_stmt_close($stmt);                    
                 return $result;
@@ -77,7 +78,7 @@ function validate_select($link, $select, $from, $where="", $is="")
         
         }
     } else {
-        echo "<br>Unknown Error Occured";
+        echo "<br> Something went wrong, try again later. (in: 'server.php')";
 
     }
 }

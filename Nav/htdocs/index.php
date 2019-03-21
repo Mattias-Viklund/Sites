@@ -1,4 +1,4 @@
 <?php
-header("location: ../../forum.php");
+header("location: forum.php");
 
 ?>

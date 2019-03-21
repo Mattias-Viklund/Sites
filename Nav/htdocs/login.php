@@ -2,9 +2,6 @@
 // Initialize the session
 session_start();
  
-require_once "utils.php";
-check_login();
- 
 // Include config file
 require_once "config.php";
  

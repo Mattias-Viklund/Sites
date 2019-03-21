@@ -48,9 +48,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Validate credentials
     if(empty($sub_err)){
-        if (!validate_select("sub_id", "subs", "sub_name", $currentsub)){
+        if (!validate_select($link, "sub_id", "subs", "sub_name", $currentsub)){
             // Display an error message if sub doesn't exist
-            $sub_err = "No sub with that name found.";
+            $sub_err = "Niggatoiled.";
+
+        }else{
+            echo "Working";
 
         }
     }
