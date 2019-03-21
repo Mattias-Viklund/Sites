@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 27 feb 2019 kl 15:23
+-- Tid vid skapande: 21 mars 2019 kl 14:19
 -- Serverversion: 10.1.36-MariaDB
 -- PHP-version: 7.2.10
 
@@ -161,13 +161,13 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT för tabell `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT för tabell `subs`
 --
 ALTER TABLE `subs`
-  MODIFY `sub_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `sub_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT för tabell `users`
