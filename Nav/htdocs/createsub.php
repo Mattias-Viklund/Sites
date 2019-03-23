@@ -19,75 +19,81 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["subname"]))){
         $subname_err = "Please enter a Sub name.";
         
-    } else{
-        // Prepare a select statement
-        $sql = "SELECT sub_id FROM subs WHERE sub_name = ?";
-        
-        if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_subname);
-            
-            // Set parameters
-            $param_subname = trim($_POST["subname"]);
-            
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                /* store result */
-                mysqli_stmt_store_result($stmt);
-                
-                if(mysqli_stmt_num_rows($stmt) == 1){
-                    $subname_err = "This Sub name is already taken.";
+    } else {
+        $subname = trim($_POST["subname"]);
+        if(preg_match("/^[a-zA-Z0-9]+$/", $subname)) {
 
+            // Prepare a select statement
+            $sql = "SELECT sub_id FROM subs WHERE sub_name = ?";
+        
+            if($stmt = mysqli_prepare($link, $sql)){
+                // Bind variables to the prepared statement as parameters
+                mysqli_stmt_bind_param($stmt, "s", $param_subname);
+            
+                // Set parameters
+                $param_subname = trim($_POST["subname"]);
+            
+                // Attempt to execute the prepared statement
+                if(mysqli_stmt_execute($stmt)){
+                    /* store result */
+                    mysqli_stmt_store_result($stmt);
+                
+                    if(mysqli_stmt_num_rows($stmt) == 1){
+                        $subname_err = "This Sub name is already taken.";
+
+                    } else{
+                        $subname = trim($_POST["subname"]);
+
+                    }
                 } else{
-                    $subname = trim($_POST["subname"]);
-
-                }
-            } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                    echo "Oops! Something went wrong. Please try again later.";
                 
+                }
             }
-        }
          
-        // Close statement
-        mysqli_stmt_close($stmt);
+            // Close statement
+            mysqli_stmt_close($stmt);
 
-    }
     
-    // Check input errors before inserting in database
-    if(empty($subname_err)){
-        
-        // Prepare an insert statement
-        $sql = "INSERT INTO subs (sub_name, sub_owner) VALUES (?, ?)";
+    
+            // Check input errors before inserting in database
+            if(empty($subname_err)){
+                // Prepare an insert statement
+                $sql = "INSERT INTO subs (sub_name, sub_owner) VALUES (?, ?)";
 
-        if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ss", $param_subname, $param_username);
+                if($stmt = mysqli_prepare($link, $sql)){
+                    // Bind variables to the prepared statement as parameters
+                    mysqli_stmt_bind_param($stmt, "ss", $param_subname, $param_username);
             
-            // Set parameters
-            $param_subname = $subname;
-            $param_username = $username;
+                    // Set parameters
+                    $param_subname = $subname;
+                    $param_username = $username;
             
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                create_sub($subname);
+                    // Attempt to execute the prepared statement
+                    if(mysqli_stmt_execute($stmt)){
+                        create_sub($subname);
 
-                // Redirect to login page
-                header("location: forum.php");
+                        // Redirect to login page
+                        header("location: forum.php");
 
-            } else{
-                echo "Something went wrong. Please try again later.";
+                    } else{
+                        echo "Something went wrong. Please try again later.";
+
+                    }
+                }
+
+                // Close statement
+                mysqli_stmt_close($stmt);
 
             }
-        }
-
-        // Close statement
-        mysqli_stmt_close($stmt);
-
-    }
     
-    // Close connection
-    mysqli_close($link);
-
+            // Close connection
+            mysqli_close($link);
+        } else {
+            $subname_err = 'The sub name has to be lowecase without special characters.';
+        
+        }
+    }
 }
 
 function create_sub($sub_name){
