@@ -52,7 +52,6 @@ CREATE TABLE `following` (
 --
 
 INSERT INTO `following` (`user_id`, `sub_id`) VALUES
-(1, 15),
 (1, 15);
 
 -- --------------------------------------------------------
@@ -92,14 +91,6 @@ CREATE TABLE `posts` (
   `post_sub` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumpning av Data i tabell `posts`
---
-
-INSERT INTO `posts` (`created_at`, `post_id`, `post_username`, `post_text`, `post_title`, `post_sub`) VALUES
-('2019-03-23 02:39:06', 3, 'Mew_', 'Ã–LKHJASDFÃ–LIJKASDF io hat NIE G', 'sadgfkljghaSDLKJH', 'aids'),
-('2019-03-23 02:39:30', 4, 'Mew_', 'dude', 'Hello dude', 'ngger');
-
 -- --------------------------------------------------------
 
 --
@@ -111,14 +102,6 @@ CREATE TABLE `subs` (
   `sub_name` varchar(50) NOT NULL,
   `sub_owner` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumpning av Data i tabell `subs`
---
-
-INSERT INTO `subs` (`sub_id`, `sub_name`, `sub_owner`) VALUES
-(6, 'ngger', 'Mew_'),
-(7, 'aids', 'Mew_');
 
 -- --------------------------------------------------------
 
