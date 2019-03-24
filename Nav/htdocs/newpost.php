@@ -147,8 +147,14 @@ if(isset($_GET['sub'])){
 
             </div>
             <div class="form-group">
-                <label>Change subreddit</label>
-                <input type="text" name="sub" class="form-control" value="<?php echo($currentsub) ?>"><br>
+                <label>Sub: </label>
+                <select name="sub">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+
                 <span class="help-block"><?php echo $sub_err; ?></span>
 
             </div>   

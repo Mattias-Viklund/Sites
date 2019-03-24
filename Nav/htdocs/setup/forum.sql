@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 21 mars 2019 kl 14:19
--- Serverversion: 10.1.36-MariaDB
--- PHP-version: 7.2.10
+-- Tid vid skapande: 24 mars 2019 kl 23:06
+-- Serverversion: 10.1.38-MariaDB
+-- PHP-version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,6 +47,14 @@ CREATE TABLE `following` (
   `sub_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumpning av Data i tabell `following`
+--
+
+INSERT INTO `following` (`user_id`, `sub_id`) VALUES
+(1, 15),
+(1, 15);
+
 -- --------------------------------------------------------
 
 --
@@ -84,6 +92,14 @@ CREATE TABLE `posts` (
   `post_sub` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumpning av Data i tabell `posts`
+--
+
+INSERT INTO `posts` (`created_at`, `post_id`, `post_username`, `post_text`, `post_title`, `post_sub`) VALUES
+('2019-03-23 02:39:06', 3, 'Mew_', 'Ã–LKHJASDFÃ–LIJKASDF io hat NIE G', 'sadgfkljghaSDLKJH', 'aids'),
+('2019-03-23 02:39:30', 4, 'Mew_', 'dude', 'Hello dude', 'ngger');
+
 -- --------------------------------------------------------
 
 --
@@ -95,6 +111,14 @@ CREATE TABLE `subs` (
   `sub_name` varchar(50) NOT NULL,
   `sub_owner` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumpning av Data i tabell `subs`
+--
+
+INSERT INTO `subs` (`sub_id`, `sub_name`, `sub_owner`) VALUES
+(6, 'ngger', 'Mew_'),
+(7, 'aids', 'Mew_');
 
 -- --------------------------------------------------------
 
@@ -114,7 +138,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
-(5, 'Mew_', '$2y$10$Y0tDRRObK2E2l2l87wJEq.9Kc4jHo9KXbzJxl85LVonKeeXMr16QS', '2019-02-22 12:25:39');
+(1, 'Mew_', '$2y$10$Y0tDRRObK2E2l2l87wJEq.9Kc4jHo9KXbzJxl85LVonKeeXMr16QS', '2019-02-22 12:25:39');
 
 --
 -- Index för dumpade tabeller
@@ -125,6 +149,18 @@ INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`comment_id`);
+
+--
+-- Index för tabell `following`
+--
+ALTER TABLE `following`
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Index för tabell `friends`
+--
+ALTER TABLE `friends`
+  ADD UNIQUE KEY `INDEX` (`user_id`);
 
 --
 -- Index för tabell `posts`
@@ -161,13 +197,13 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT för tabell `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT för tabell `subs`
 --
 ALTER TABLE `subs`
-  MODIFY `sub_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `sub_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT för tabell `users`

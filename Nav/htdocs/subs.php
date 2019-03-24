@@ -11,11 +11,7 @@ require_once "config.php";
 // Check connection
 if (!$link) {
     die("Connection failed: " . mysqli_connect_error());
-}
-
-if($_SERVER["REQUEST_METHOD"] == "POST"){
     
-
 }
 
 $sql = "SELECT sub_name FROM subs;";
@@ -32,7 +28,7 @@ $result = mysqli_query($link, $sql);
     <link rel="stylesheet" href="forum.css">
     <style type="text/css">
         body{ 
-            font: 14px sans-serif; 
+            font: 14px sans-serif; z
             text-align: center; 
             
         }

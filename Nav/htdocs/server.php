@@ -31,6 +31,29 @@ function insert_into($link, $into, $columns, ...$values)
 
 }
 
+function get_user_subs($user_id)
+{
+
+
+}
+
+
+
+function get_user_friends($link, $user_id): mysqli_stmt
+{
+    $result = validate_select($link, "sub_id", "following", "user_id", $user_id);
+
+    if (!$result)
+    {
+        return null;
+
+    } else {
+        return $result;
+
+    }
+}
+
+
 function get_valid_args(...$args){
     $valid_args = 0;
     foreach ($args as $value) {
@@ -62,10 +85,8 @@ function validate_select($link, $select, $from, $where="", $is="")
             $result = mysqli_stmt_store_result($stmt);
                         
             // Check if it exists, if yes then return true
-            if(mysqli_stmt_num_rows($stmt) > 0){
-                // Close statement
-                mysqli_stmt_close($stmt);                    
-                return $result;
+            if($result){ 
+                return $stmt;
 
             } else{
                 // Close statement
