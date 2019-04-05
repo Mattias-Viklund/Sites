@@ -42,6 +42,7 @@ function get_user_subs($user_id)
 function get_user_friends($link, $user_id): mysqli_stmt
 {
     $result = validate_select($link, "sub_id", "following", "user_id", $user_id);
+    
 
     if (!$result)
     {

@@ -64,7 +64,7 @@ $result = mysqli_query($link, $sql);
         <?php 
         if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
-                echo ("<li class=\"subitem\"><a href=/sub/".$row["sub_name"].">".$row["sub_name"]."</a></li>");
+                echo ("<li class=\"subitem\"><a href=./sub/".$row["sub_name"].">".$row["sub_name"]."</a></li>");
 
             }
         } else {

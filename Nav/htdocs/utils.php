@@ -8,4 +8,10 @@ function check_login()
 
     }
 }
+
+function console_log($message)
+{
+    echo "<script>console.log(".$message.");</script>";
+
+}
 ?>  

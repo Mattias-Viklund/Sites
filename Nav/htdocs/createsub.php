@@ -73,10 +73,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if(mysqli_stmt_execute($stmt)){
                         create_sub($subname);
 
+                        console_log("Created Sub!.");
+
                         // Redirect to login page
                         header("location: forum.php");
 
                     } else{
+                        console_log("Something went wrong.");
                         echo "Something went wrong. Please try again later.";
 
                     }
@@ -97,6 +100,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 function create_sub($sub_name){
+    echo "<script>console.log('Creating Sub...s');</script>";
     mkdir(SERVER_EXECUTING_DIRECTORY."/sub/".trim($sub_name));
 
     $copy = SERVER_EXECUTING_DIRECTORY."/default/sub/index.php";
