@@ -2,24 +2,19 @@
 // Initialize the session
 session_start();
  
-require_once "utils.php";
+require_once "../../utils.php";
 check_login();
 
 // Include config file
-require_once "config.php";
+require_once "../../config.php";
  
 // Check connection
 if (!$link) {
     die("Connection failed: " . mysqli_connect_error());
-}
+}   
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    
-
-}
-
-$sql = "SELECT * FROM posts;";
-$result = mysqli_query($link, $sql);
+$currentsub = str_replace("/sub/", "", dirname($_SERVER["PHP_SELF"]));
+$sql = "SELECT * FROM posts WHERE post_sub='".$currentsub."';";
 
 ?>
  
@@ -27,26 +22,25 @@ $result = mysqli_query($link, $sql);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Forum All</title>
+    <title>Sub <?php echo htmlspecialchars($currentsub); ?></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="forum.css">
-    <script src="forum.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <style type="text/css">
+        body{ 
+            font: 14px sans-serif; text-align: center; 
+            
+        }
+    </style>
 </head>
 <body>
-    <div class="topbar" id="topbar">
-        <h1>Showing all posts.</h1>
+    <div class="page-header">
+        <h1>Current sub: <b><?php echo htmlspecialchars($currentsub); ?></b></h1>
     </div>
+    
+    <div class="page-header">
+    <?php 
+        $result = mysqli_query($link, $sql);
 
-    <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">×</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
-    </div>
-    <div class="main" id="main">
-        <button class="openbtn" onclick="toggleNav()">☰ Toggle Sidebar</button>
-        <?php 
         if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
@@ -55,28 +49,17 @@ $result = mysqli_query($link, $sql);
     
             }
         } else {
-            echo "0 results";
+            echo "0 posts found.";
     
         }
     
         mysqli_close($link);
         ?>
-        <?php
-        for ($i = 0; $i < 10; $i++)
-        {
-            echo ("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
-
-        }
-    ?>
-    <p>
-        <a href="newpost.php" class="btn btn-info">Post New Text</a>
-        <a href="createsub.php" class="btn btn-primary">Create New Sub</a>
-        <a href="subs.php" class="btn btn-link">Show Subs</a>
-    </p>
-    <p>
-        <a href="logout.php" class="btn btn-danger">Sign Out</a>
-    </p>
     </div>
+    <p>
+        <a href="../../newpost.php" class="btn btn-info">Post New Text</a>
+        <a href="../../logout.php" class="btn btn-danger">Sign Out</a>
+    </p>
 </body>
 <footer>
     <div id="hidden_form_container" style="display:none;"></div>
