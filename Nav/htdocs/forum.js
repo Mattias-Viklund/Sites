@@ -1,27 +1,59 @@
-var aids = false;
-function toggleNav(){
-    if (aids)
-    {
-        closeNav();
+let sidebarOpen = false;
 
-    } 
-    else
-    {
-        openNav();
-
-    }
-    aids = !aids;
+function saveState(){
+  localStorage.setItem("sidebarOpen", sidebarOpen);
 
 }
 
+function loadState(){
+  let sidebarState = localStorage.getItem("sidebarOpen");
+  if (sidebarState == null)
+  {
+    setState(false);
+    return true;
+
+  }
+  setState(sidebarState);
+
+}
+
+function setState(open){
+  console.log(open);
+  if (open === "true") {
+    openNav();
+    sidebarOpen = true;
+
+  }
+  else if (open === "false") {
+    closeNav();
+    sidebarOpen = false;
+
+  }
+  saveState(sidebarOpen);
+
+}
+
+function toggleNav() {
+  if (sidebarOpen)
+  {
+
+  } else {
+    
+  }
+}
+
 function openNav() {
-    document.getElementById("mySidebar").style.width = "200px";
-    document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("sidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("openbtn").style.left = "250px";
 
 }
 
 function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
+  document.getElementById("sidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+  document.getElementById("openbtn").style.left = "0";
 
 }
+
+loadState();

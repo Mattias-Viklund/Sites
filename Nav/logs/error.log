@@ -239,3 +239,51 @@
 [Thu Mar 28 12:24:00.921975 2019] [php7:warn] [pid 3152:tid 1976] [client 127.0.0.1:49857] PHP Warning:  copy(C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs/sub/testing2/index.php): failed to open stream: No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\createsub.php on line 109, referer: http://127.0.0.1:8080/createsub.php
 [Thu Mar 28 12:24:00.924967 2019] [php7:warn] [pid 3152:tid 1976] [client 127.0.0.1:49857] PHP Warning:  copy(C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs/sub/testing2/index.css): failed to open stream: No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\createsub.php on line 114, referer: http://127.0.0.1:8080/createsub.php
 [Thu Apr 11 12:29:58.745576 2019] [php7:notice] [pid 3152:tid 1968] [client 127.0.0.1:60683] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\login.php on line 53, referer: http://127.0.0.1:8080/login.php
+[Fri Apr 12 20:03:34.246880 2019] [mpm_winnt:notice] [pid 4692:tid 744] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Apr 12 20:03:36.422902 2019] [mpm_winnt:notice] [pid 3152:tid 784] AH00364: Child: All worker threads have exited.
+[Fri Apr 12 20:03:36.750706 2019] [mpm_winnt:notice] [pid 4692:tid 744] AH00430: Parent: Child process 3152 exited successfully.
+[Fri Apr 12 20:04:31.181600 2019] [mpm_winnt:notice] [pid 3212:tid 820] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Fri Apr 12 20:04:31.181600 2019] [mpm_winnt:notice] [pid 3212:tid 820] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Fri Apr 12 20:04:31.181600 2019] [core:notice] [pid 3212:tid 820] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Fri Apr 12 20:04:31.181600 2019] [mpm_winnt:notice] [pid 3212:tid 820] AH00418: Parent: Created child process 5464
+[Fri Apr 12 20:04:32.135876 2019] [mpm_winnt:notice] [pid 5464:tid 624] AH00354: Child: Starting 150 worker threads.
+[Fri Apr 12 20:04:38.652527 2019] [mpm_winnt:notice] [pid 3212:tid 820] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Apr 12 20:04:40.683307 2019] [mpm_winnt:notice] [pid 5464:tid 624] AH00364: Child: All worker threads have exited.
+[Fri Apr 12 20:04:40.698955 2019] [mpm_winnt:notice] [pid 3212:tid 820] AH00430: Parent: Child process 5464 exited successfully.
+[Fri Apr 12 20:05:26.238072 2019] [mpm_winnt:notice] [pid 3644:tid 808] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Fri Apr 12 20:05:26.238072 2019] [mpm_winnt:notice] [pid 3644:tid 808] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Fri Apr 12 20:05:26.238072 2019] [core:notice] [pid 3644:tid 808] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Fri Apr 12 20:05:26.238072 2019] [mpm_winnt:notice] [pid 3644:tid 808] AH00418: Parent: Created child process 5728
+[Fri Apr 12 20:05:27.039060 2019] [mpm_winnt:notice] [pid 5728:tid 676] AH00354: Child: Starting 150 worker threads.
+[Tue Apr 16 17:18:37.709505 2019] [core:warn] [pid 3552:tid 672] AH00098: pid file C:/Users/elev/Desktop/Sites/Nav/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Apr 16 17:18:37.825362 2019] [mpm_winnt:notice] [pid 3552:tid 672] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Tue Apr 16 17:18:37.825362 2019] [mpm_winnt:notice] [pid 3552:tid 672] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Tue Apr 16 17:18:37.825362 2019] [core:notice] [pid 3552:tid 672] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Tue Apr 16 17:18:37.825362 2019] [mpm_winnt:notice] [pid 3552:tid 672] AH00418: Parent: Created child process 5892
+[Tue Apr 16 17:18:38.744903 2019] [mpm_winnt:notice] [pid 5892:tid 748] AH00354: Child: Starting 150 worker threads.
+[Fri May 03 07:42:53.456039 2019] [mpm_winnt:notice] [pid 3552:tid 672] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri May 03 07:42:55.544465 2019] [mpm_winnt:notice] [pid 5892:tid 748] AH00364: Child: All worker threads have exited.
+[Fri May 03 07:42:55.840352 2019] [mpm_winnt:notice] [pid 3552:tid 672] AH00430: Parent: Child process 5892 exited successfully.
+[Fri May 03 07:43:37.223018 2019] [mpm_winnt:notice] [pid 3348:tid 676] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Fri May 03 07:43:37.223018 2019] [mpm_winnt:notice] [pid 3348:tid 676] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Fri May 03 07:43:37.223018 2019] [core:notice] [pid 3348:tid 676] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Fri May 03 07:43:37.223018 2019] [mpm_winnt:notice] [pid 3348:tid 676] AH00418: Parent: Created child process 6028
+[Fri May 03 07:43:38.025177 2019] [mpm_winnt:notice] [pid 6028:tid 652] AH00354: Child: Starting 150 worker threads.
+[Tue May 07 12:33:52.032845 2019] [mpm_winnt:notice] [pid 3348:tid 676] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue May 07 12:33:54.094894 2019] [mpm_winnt:notice] [pid 6028:tid 652] AH00364: Child: All worker threads have exited.
+[Tue May 07 12:33:54.297937 2019] [mpm_winnt:notice] [pid 3348:tid 676] AH00430: Parent: Child process 6028 exited successfully.
+[Tue May 07 12:34:29.690912 2019] [mpm_winnt:notice] [pid 3588:tid 884] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Tue May 07 12:34:29.690912 2019] [mpm_winnt:notice] [pid 3588:tid 884] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Tue May 07 12:34:29.690912 2019] [core:notice] [pid 3588:tid 884] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Tue May 07 12:34:29.690912 2019] [mpm_winnt:notice] [pid 3588:tid 884] AH00418: Parent: Created child process 5972
+[Tue May 07 12:34:30.223356 2019] [mpm_winnt:notice] [pid 5972:tid 680] AH00354: Child: Starting 150 worker threads.
+[Thu May 09 12:36:17.621207 2019] [php7:error] [pid 5972:tid 1972] [client 127.0.0.1:51138] script 'C:/Users/elev/Desktop/Sites/Nav/htdocs/index.php' not found or unable to stat, referer: http://127.0.0.1:8080/
+[Thu May 09 12:46:45.027115 2019] [mpm_winnt:notice] [pid 3588:tid 884] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu May 09 12:46:47.043773 2019] [mpm_winnt:notice] [pid 5972:tid 680] AH00364: Child: All worker threads have exited.
+[Thu May 09 12:46:47.247913 2019] [mpm_winnt:notice] [pid 3588:tid 884] AH00430: Parent: Child process 5972 exited successfully.
+[Thu May 09 12:46:51.415219 2019] [mpm_winnt:notice] [pid 9604:tid 748] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Thu May 09 12:46:51.415219 2019] [mpm_winnt:notice] [pid 9604:tid 748] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Thu May 09 12:46:51.415219 2019] [core:notice] [pid 9604:tid 748] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Thu May 09 12:46:51.423198 2019] [mpm_winnt:notice] [pid 9604:tid 748] AH00418: Parent: Created child process 7204
+[Thu May 09 12:46:52.555199 2019] [mpm_winnt:notice] [pid 7204:tid 688] AH00354: Child: Starting 150 worker threads.
+[Thu May 09 13:42:03.663150 2019] [php7:error] [pid 7204:tid 1972] [client 127.0.0.1:54534] script 'C:/Users/elev/Desktop/Sites/Nav/htdocs/index.php' not found or unable to stat, referer: http://127.0.0.1:8080/
