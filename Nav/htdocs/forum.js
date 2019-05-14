@@ -1,32 +1,31 @@
-let sidebarOpen = false;
+let sidebarOpen = "no";
 
-function saveState(){
+function saveState() {
   localStorage.setItem("sidebarOpen", sidebarOpen);
 
 }
 
-function loadState(){
+function loadState() {
   let sidebarState = localStorage.getItem("sidebarOpen");
   if (sidebarState == null)
-  {
-    setState(false);
-    return true;
+    return;
 
-  }
-  setState(sidebarState);
+  if (sidebarState == "yes")
+    setState("open");
+  else if (sidebarState == "no")
+    setState("closed");
 
-}
+}   
 
-function setState(open){
-  console.log(open);
-  if (open === "true") {
+function setState(open) {
+  if (open === "open") {
     openNav();
-    sidebarOpen = true;
+    sidebarOpen = "yes";
 
   }
-  else if (open === "false") {
+  else if (open === "closed") {
     closeNav();
-    sidebarOpen = false;
+    sidebarOpen = "no";
 
   }
   saveState(sidebarOpen);
@@ -34,11 +33,12 @@ function setState(open){
 }
 
 function toggleNav() {
-  if (sidebarOpen)
-  {
+  if (sidebarOpen == "yes") {
+    setState("closed");
 
   } else {
-    
+    setState("open");
+
   }
 }
 
