@@ -61,8 +61,5 @@ $result = mysqli_query($link, $sql);
     
         mysqli_close($link);
         ?>
-    <p>
-        <a href="forum.php" class="btn btn-info">Back</a>
-    </p>
 </body>
 </html>

@@ -56,18 +56,16 @@ body {
 }
 
 .openbtn {
-  font-size: 10px;
   cursor: pointer;
   background-image: url("./images/grippy.png");
   background-color: #333;
   background-repeat: no-repeat;
   background-position: center;
   color: white;
-  margin-left: 0px;
   height: 100%;
   left: 0;
   top: 0;
-  padding: 10px 15px;
+  padding: 10px 8px;
   position: fixed;
   border: none;
   transition: left .5s;

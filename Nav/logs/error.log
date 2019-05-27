@@ -287,3 +287,12 @@
 [Thu May 09 12:46:51.423198 2019] [mpm_winnt:notice] [pid 9604:tid 748] AH00418: Parent: Created child process 7204
 [Thu May 09 12:46:52.555199 2019] [mpm_winnt:notice] [pid 7204:tid 688] AH00354: Child: Starting 150 worker threads.
 [Thu May 09 13:42:03.663150 2019] [php7:error] [pid 7204:tid 1972] [client 127.0.0.1:54534] script 'C:/Users/elev/Desktop/Sites/Nav/htdocs/index.php' not found or unable to stat, referer: http://127.0.0.1:8080/
+[Thu May 23 11:26:43.721704 2019] [mpm_winnt:notice] [pid 16236:tid 820] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Thu May 23 11:26:43.721704 2019] [mpm_winnt:notice] [pid 16236:tid 820] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Thu May 23 11:26:43.721704 2019] [core:notice] [pid 16236:tid 820] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Thu May 23 11:26:43.725708 2019] [mpm_winnt:notice] [pid 16236:tid 820] AH00418: Parent: Created child process 10028
+[Thu May 23 11:26:44.329743 2019] [mpm_winnt:notice] [pid 10028:tid 224] AH00354: Child: Starting 150 worker threads.
+[Thu May 23 11:34:42.366107 2019] [php7:notice] [pid 10028:tid 1968] [client 127.0.0.1:52506] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\login.php on line 53, referer: http://127.0.0.1:8080/login.php
+[Thu May 23 13:01:12.418764 2019] [mpm_winnt:notice] [pid 16236:tid 820] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu May 23 13:01:14.439015 2019] [mpm_winnt:notice] [pid 10028:tid 224] AH00364: Child: All worker threads have exited.
+[Thu May 23 13:01:14.733916 2019] [mpm_winnt:notice] [pid 16236:tid 820] AH00430: Parent: Child process 10028 exited successfully.
