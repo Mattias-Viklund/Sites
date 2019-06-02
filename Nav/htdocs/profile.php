@@ -59,19 +59,19 @@ if (!$link) {
         $sql = "SELECT * FROM `posts` WHERE post_username='".$_SESSION['username']."'";
         $result = mysqli_query($link, $sql);
         $posts = mysqli_num_rows($result);
-        echo "You've made ".$posts." posts.<br>";
+        echo "You've made ".$posts." post(s).<br>";
 
 
         $sql = "SELECT * FROM `following` WHERE user_id='".$_SESSION['id']."'";
         $result = mysqli_query($link, $sql);
         $subs = mysqli_num_rows($result);
-        echo "You're following ".$subs." subs.<br>";
+        echo "You're following ".$subs." sub(s).<br>";
 
 
         $sql = "SELECT * FROM `friends` WHERE user_id='".$_SESSION['id']."'";
         $result = mysqli_query($link, $sql);
         $friends = mysqli_num_rows($result);
-        echo "You have ".$friends." friends.<br>";
+        echo "You have ".$friends." friend(s).<br>";
 
 
       ?>

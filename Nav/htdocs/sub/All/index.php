@@ -1,9 +1,6 @@
 <?php
 // Initialize the session
 session_start();
- 
-require_once "../../utils.php";
-check_sublogin();
 
 // Include config file
 require_once "../../config.php";

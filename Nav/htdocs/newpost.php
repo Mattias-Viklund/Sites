@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $sub = trim($_POST["sub"]);
         if ($sub == "All")
         {
-            $sub_err = "Bruh, you can't post to All, choose something else.";
+            $sub_err = "Bruh, you can't post to All, choose something more specific.";
             $sub = "";
 
         }
@@ -49,7 +49,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // No errors.
     if ($title_err == $text_err && $text_err == $sub_err)
     {
-        $sql = "INSERT INTO posts (post_title, post_text, post_username, post_sub) VALUES ('".mysqli_real_escape_string($link, $title)."', '".mysqli_real_escape_string($link, $text)."', '".$_SESSION['username']."', '".$sub."')";
+        $sql = "INSERT INTO posts (post_title, post_text, post_username, post_sub) VALUES ('".htmlspecialchars($title)."', '".htmlspecialchars($text)."', '".$_SESSION['username']."', '".$sub."')";
+        echo $sql;
         $result = mysqli_query($link, $sql);
 
         if ($result)
@@ -102,7 +103,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 Sub:
                 <?php echo $sub_err; if (!empty($sub_err)) echo "<br>"; ?>
-                <select name="sub">
+                <select name="sub" id="sub">
                     <?php
                         $sql = "SELECT * FROM `subs`";
                         $result = mysqli_query($link, $sql);
@@ -117,6 +118,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     ?>
                 </select>
                 <br>
+
+                <script>
+                function SetSub(sub) {
+                    document.getElementById("sub").value = sub;
+
+                }
+                </script>
+
+                <?php 
+                if($_SERVER["REQUEST_METHOD"] == "GET")
+                {
+                    if (!empty($_GET['sub']))
+                    {
+                        echo "<script>SetSub(\"".$_GET['sub']."\")</script>";
+    
+                    }
+                }
+                ?>
 
                 <input type="submit" value="Post">
             </form>

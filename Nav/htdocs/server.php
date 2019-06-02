@@ -95,9 +95,9 @@ function load_posts($result, $root){
         while($row = mysqli_fetch_assoc($result)) {
             $time = explode(" ", $row["created_at"]);
             if ($root)
-                echo "<a href=\"comment.php?post=".$row["post_id"]."\">" . $time[0]. "(" . $time[1] . ") ". $row["post_username"] . ": ". $row["post_title"]. "<br></a>";
+                echo "<a href=\"comment.php?post=".$row["post_id"]."\">" /*. $time[0]. "(" . $time[1] . ") "*/. $row["post_username"] . ": ". $row["post_title"]. "<br></a>";
             else
-                echo "<a href=\"../../comment.php?post=".$row["post_id"]."\">" . $time[0]. "(" . $time[1] . ") ". $row["post_username"] . ": ". $row["post_title"]. "<br></a>";
+                echo "<a href=\"../../comment.php?post=".$row["post_id"]."\">" /*. $time[0]. "(" . $time[1] . ") "*/. $row["post_username"] . ": ". $row["post_title"]. "<br></a>";
 
         }
       } else {

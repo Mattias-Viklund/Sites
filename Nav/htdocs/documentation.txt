@@ -104,4 +104,7 @@ Och det var så mycket mer jag skulle vilja lägga till, men som jag förstod at
 Med det så hade jag ett halvt fungerande och snabbt ihopslängt forum, och för någon som aldrig hållit på med webbutveckling eller SQL så tycker jag att det blev rätt så bra.
 Men hade några små saker som jag skulle velat fixa, men som jag inte haft tid för riktigt, som att det alltid står 'Sign out' där nere i menyn till vänster, även om man inte är inloggad.
 
-Hoppas att detta duger som dokumentation, det är inte exakt en loggbok, men det är i grova drag processen om hur jag skapade forum.
+Hoppas att detta duger som dokumentation, det är inte exakt en loggbok, men det är i grova drag processen om hur jag skapade forumet.
+Dessutom GDPR lydande ;)
+
+Men måste verkligen göra mobilversionen av hemsidan, lovar att det kommer, även om det kanske inte är just precis nu.

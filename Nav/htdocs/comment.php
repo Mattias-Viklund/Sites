@@ -54,9 +54,10 @@ $result = mysqli_query($link, $sql);
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
                     $time = explode(" ", $row["created_at"]);
-                    echo "<p><b>".$row["post_title"]."</b></h3>";
+                    echo "<p><b>".$row["post_title"]."</b></p>";
+                    echo "<p>".str_replace(htmlspecialchars("<br>"), "<br>", $row["post_text"])."</p>";
+                    echo "<hr>";
                     echo "<p>By <b>".$row["post_username"]."</b> to <b>".$row["post_sub"]."</b> at ".$time[0]." - ".$time[1]."</p>";
-                    echo "<p>".$row["post_text"]."</p>";
     
                 }
             }

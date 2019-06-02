@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 24 mars 2019 kl 23:06
--- Serverversion: 10.1.38-MariaDB
--- PHP-version: 7.3.2
+-- Tid vid skapande: 02 jun 2019 kl 21:04
+-- Serverversion: 10.1.39-MariaDB
+-- PHP-version: 7.1.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,13 +46,6 @@ CREATE TABLE `following` (
   `user_id` bigint(20) NOT NULL,
   `sub_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumpning av Data i tabell `following`
---
-
-INSERT INTO `following` (`user_id`, `sub_id`) VALUES
-(1, 15);
 
 -- --------------------------------------------------------
 
@@ -180,19 +173,19 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT för tabell `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT för tabell `subs`
 --
 ALTER TABLE `subs`
-  MODIFY `sub_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `sub_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT för tabell `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

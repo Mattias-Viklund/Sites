@@ -11,12 +11,13 @@ if (!$link) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT * FROM posts WHERE post_sub='All';";
+$sql = "SELECT * FROM posts;";
 $result = mysqli_query($link, $sql);
 
 ?>
 
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -26,16 +27,25 @@ $result = mysqli_query($link, $sql);
 <body>
     <div id="sidebar" class="sidebar">
         <img src="images/Placeholder.png" style="border-image-repeat: stretch;">
-        <a href="forum.php">HOME</a>
+        <?php 
+            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+                echo "<a href=\"index.php\">HOME</a>";
+            else
+                echo "<a href=\"forum.php\">HOME</a>";
+
+        ?>
         <a href="subs.php">SUBS</a>
         <a href="following.php">FOLLOWING</a>
         <a href="profile.php">PROFILE</a>
         <div class="bottomsidebar">
             <a href="settings.php">SETTINGS</a>
             <?php 
-            
+            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+                echo "<a href=\"login.php\">LOG IN</a>";
+            else
+                echo "<a href=\"logout.php\">SIGN OUT</a>";
+
             ?>
-            <a href="logout.php">SIGN OUT</a>
         </div>
     </div>
 
@@ -51,11 +61,9 @@ $result = mysqli_query($link, $sql);
             <!-- LINK TO COMMENTS, SHARE -->
         </div>
         <div class="links">
-            <p>
-                <a href="newpost.php">Post New Text</a>
-                <a href="createsub.php">Create New Sub</a>
-                <a href="subs.php">Show Subs</a>
-            </p>
+            <p></p>
+            <a href="newpost.php">Post New Text</a>
+            <a href="subs.php">Show Subs</a>
         </div>
     </div>
 </body>

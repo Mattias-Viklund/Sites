@@ -19,7 +19,7 @@ if (!$link) {
 <html lang="en">
 
 <head>
-    <title>Post</title>
+    <title>Following</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
@@ -45,7 +45,7 @@ if (!$link) {
                 $sql = "SELECT * FROM `following` WHERE user_id='".$_SESSION['id']."'";
                 $result = mysqli_query($link, $sql);
                 $subs = mysqli_num_rows($result);
-                echo "You're following ".$subs." subs.<br>";
+                echo "You're following ".$subs." sub(s).<br>";
 
                 if (mysqli_num_rows($result) > 0) {
                     while($row = mysqli_fetch_assoc($result)) {
@@ -64,7 +64,37 @@ if (!$link) {
                         }
                     }
                 } else {
-                    echo "It would seem that you kind of suck.<br>Or something went wrong in the SQL query.<br>Either way I blame you.<br>";
+                    if (mysqli_num_rows($result) != 0)
+                        echo "It would seem that you kind of suck.<br>Or something went wrong in the SQL query.<br>Either way I blame you.<br>";
+            
+                }
+
+                echo "<br>";
+
+                $sql = "SELECT * FROM `friends` WHERE user_id='".$_SESSION['id']."'";
+                $result = mysqli_query($link, $sql);
+                $subs = mysqli_num_rows($result);
+                echo "You have ".$subs." friend(s).<br>";
+
+                if (mysqli_num_rows($result) > 0) {
+                    while($row = mysqli_fetch_assoc($result)) {
+                        if ($subs != 0)
+                        {
+                            $sql2 = "SELECT * FROM `users` WHERE id=".$row['friend_id']."";
+                            $result2 = mysqli_query($link, $sql2);
+
+                            if (mysqli_num_rows($result2) > 0) {
+                                while($row2 = mysqli_fetch_assoc($result2)) {
+                                    
+                                    echo "<p>".$row2['username']."</p><br>";
+
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    if (mysqli_num_rows($result) != 0)
+                        echo "It would seem that you kind of suck.<br>Or something went wrong in the SQL query.<br>Either way I blame you.<br>";
             
                 }
             ?>

@@ -1,9 +1,5 @@
 <?php
-// Initialize the session
 session_start();
- 
-require_once "utils.php";
-check_login();
 
 // Include config file
 require_once "config.php";
@@ -30,13 +26,25 @@ $result = mysqli_query($link, $sql);
 <body>
     <div id="sidebar" class="sidebar">
         <img src="images/Placeholder.png" style="border-image-repeat: stretch;">
-        <a href="forum.php">HOME</a>
+        <?php 
+            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+                echo "<a href=\"index.php\">HOME</a>";
+            else
+                echo "<a href=\"forum.php\">HOME</a>";
+
+        ?>
         <a href="subs.php">SUBS</a>
         <a href="following.php">FOLLOWING</a>
         <a href="profile.php">PROFILE</a>
         <div class="bottomsidebar">
             <a href="settings.php">SETTINGS</a>
-            <a href="logout.php">SIGN OUT</a>
+            <?php 
+            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+                echo "<a href=\"login.php\">LOG IN</a>";
+            else
+                echo "<a href=\"logout.php\">SIGN OUT</a>";
+
+            ?>
         </div>
     </div>
 
@@ -60,8 +68,10 @@ $result = mysqli_query($link, $sql);
                 mysqli_close($link);
                 ?>
             </ul>
+            <p></p>
             <div>
                 <a href="forum.php" class="btn btn-primary">Home</a>
+                <a href="createsub.php">Create New Sub</a>
                 <a href="logout.php" class="btn btn-danger">Sign Out</a>
             </div>
         </div>
