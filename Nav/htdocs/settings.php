@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <title>Post</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <link rel="stylesheet" href="forum.css">
+</head>
+
+<body>
+  <div id="sidebar" class="sidebar">
+    <img src="images/Placeholder.png" style="border-image-repeat: stretch;">
+    <a href="forum.php">HOME</a>
+    <a href="subs.php">SUBS</a>
+    <a href="following.php">FOLLOWING</a>
+    <a href="profile.php">PROFILE</a>
+    <div class="bottomsidebar">
+      <a href="settings.php">SETTINGS</a>
+      <a href="logout.php">SIGN OUT</a>
+    </div>
+  </div>
+  <div id="main">
+    <button class="openbtn" id="openbtn" onclick="toggleNav()"></button>
+      <div id="content">
+        <h1>TODO:<br> Allt här.</h1>
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+  <script src="scripts/sidebar.js"></script>
+  <script src="scripts/forum.js"></script>
+</footer>
+
+</html>

@@ -1,0 +1,107 @@
+Ojdå,
+Då var man här igen.
+
+Jag har inte dokumenterat någonting under denna resa som jag gjort igenom den hemska världen av SQL och php.
+
+Men det finns vissa saker som varit stora 'milestones' under detta projekt.
+Som när jag började förstå hur man kunde använda SQL queries ordentligt för att hämta data ur en databas.
+
+Allting började med att jag googlade på hur man gör en väldigt enkel Login sida i php och med SQL.
+Detta lärde mig konceptet av SQL databaser och hur de lagrar information.
+
+https://makitweb.com/create-simple-login-page-with-php-and-mysql/
+
+Min `users` tabell i databasen forum, det var den allra första saken jag skapade på detta projekt.
+Den innehöll 4 väldigt enkla kolumner, 
+'id' - Användarens ID.
+'username' - Användarnamn.
+'password' - Användarens lösenord sparat med password_hash();.
+'created_at' - Exakt datum då kontot skapades.
+
+Sedan var det mer PHP och hur man kopplade ihop HTML med PHP med JavaScript med CSS.
+
+Första raden SQL i PHP var '$sql = "INSERT INTO users (username, password) VALUES (?, ?)";'.
+Detta blev grunden för allt annat att komma i projektet.
+
+För nu förstod jag ungefär hur man gjorde saker, så då var det bara att experimentera.
+
+Så jag skapade en till tabell i forum, `posts`.
+Där skulle alla inlägg på hemsidan sparas.
+
+`posts` innehöll 6 kolumner.
+
+'post_id' - IDt på inlägget för att kunna läsa av det.
+'post_title' - Titeln på inlägget.
+'post_text' - Vad stog det i inlägget?
+'post_username' - Vem lade upp inlägget?
+'created_at' - Exakt datum och tid inlägget skapades.
+
+Och sedan kom en eftertanke, hur ska jag kunna kategorisera inläggen på mitt Forum/Jagvetinte.
+Därför lade jag till en extra rad i min kolumn.
+'post_sub' - Namnet på underforumet som man skapade inlägget.
+
+Men nu blev genast saker mer komplicerade.
+Jag började tänka på allting jag lärt mig om säkerhet kring SQL och hur enkelt det egentligen varit att helt och hållet förstöra ett forum,
+med bara ett par enkla kommandon i en textruta där man hade friheten att skriva vad som helst i.
+Typ som inläggsrutorna, det ska ju direkt in till databasen.
+
+Så efter att jag googlat ett tag så fick jag reda på hur man sanerar användarens indata.
+Bestämde mig därefter att använda mysqli_real_escape_string() på allting som användaren direkt kan ända på.
+Så gick tillbaka till registrerings och inloggningssystemet och lade till dessa funktioner där.
+
+Påbörjade ett system för att skapa nya inlägg.
+Och lärde mig om HTML Forms och metoderna 'put' och 'get'.
+Skapade ett väldigt rudimentärt system för att kunna skriva in texter i rutor och skicka tillbaka det till samma .php fil för verifiering.
+
+Allt som fanns i Formet lades in i databasen, men fortfarande fanns problemet att jag inte hade några Subs.
+Detta var då nästa steg.
+Jag skapade en ny tabell med namnet `subs`.
+Denna innehöll kolumnerna,
+'sub_id' - IDt på underforumet.
+'sub_name' - Namnet på underforumet.
+'sub_owner' - Glömde bort att den här existerade, men det är hur som helst vem som skapade forumet.
+
+Subs var nog den absolut svåraste delen i hela projektet,
+för planen var att alla underforum skulle kunna ha sin egen CSS fil för lite mer anpassning till forumet.
+
+Så för det behövdes ju en riktig CSS fil skapas någonstans, och samtidigt en SQL post med namnet på forumet, idt och var den befann sig.
+För att lösa detta var jag tvungen att använda PHPs filsystem funktioner, som mkdir() och copy_to(), 
+och detta fungerade ju väldigt bra... På min egen dator.
+Men när jag skulle ladda upp hemsidan på en host så fick jag ungefär 10000 fel och insåg att funktionerna i PHP 
+betedde sig olika beroende på om servern som hostade hemsidan var Windows eller Linux, så jag fick hitta andra alternativ i PHP som fungerade på en webbhost också.
+
+Som tur var behövde jag endast modifiera parametrarna inom mkdir() och copy_to(), men sen visste jag inte om man hade skrivbehörigheter på webbhosten.
+Men som tur var hade man det, så nu hade jag ett fungerande Subs system.
+Där varje underforum hade kunnat ha olik CSS, med en egen mapp -> alltså sökväg.
+Till exempel så hade jag nu kunnat gå in på localhost:8080/Sub/All.
+Och sett alla inlägg på underforumet All, och bara inlägg därifrån.
+
+Med detta så riktade jag åter in mig på hur användaren interagerar med forumet.
+Hur skulle jag kunna hålla koll på vilka användare man följer, och vilka forum man vill se inlägg ifrån?
+
+Så jag skapade återigen 2 tabeller,
+`following`
+'user_id'
+'sub_id'
+
+`friends`
+'user_id'
+'friend_id'
+
+Mitt tankesätt var så att man bara skulle kunna leta efter användarens ID i en av databaserna och få alla resultat.
+Och så fungerade det också, så en query som ser ut så här '$sql = "SELECT * FROM `following` WHERE user_id=".$_SESSION['id'];',
+gav tillbaka alla Subs man följde.
+
+Detta gjorde det väldigt enkelt att då endast visa forum man följde på sin homepage.
+Men sedan tänkte jag också att de som inte är inloggade kanske också vill se inlägg,
+så jag skapade en index.php och en sub/All där man kunde se de nyaste inläggen även om man inte var inloggad.
+Och dedikerade forum.php till de forum som man själv följer.
+
+Tiden på projektet började nu ta slut, och jag hade inte mycket till menyer, och ingen css att lägga märke till så jag började designa hur jag ville att hela forumet skulle se ut.
+En meny på vänster sida där man kunde navigera, och slog av text decorations på alla länkar och så vidare.
+Och det var så mycket mer jag skulle vilja lägga till, men som jag förstod att jag inte hade tid med, som inställningar för användarna, och forummoderation.
+
+Med det så hade jag ett halvt fungerande och snabbt ihopslängt forum, och för någon som aldrig hållit på med webbutveckling eller SQL så tycker jag att det blev rätt så bra.
+Men hade några små saker som jag skulle velat fixa, men som jag inte haft tid för riktigt, som att det alltid står 'Sign out' där nere i menyn till vänster, även om man inte är inloggad.
+
+Hoppas att detta duger som dokumentation, det är inte exakt en loggbok, men det är i grova drag processen om hur jag skapade forum.

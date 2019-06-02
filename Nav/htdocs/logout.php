@@ -9,6 +9,7 @@ $_SESSION = array();
 session_destroy();
  
 // Redirect to login page
-header("location: login.php");
+echo "Logged out! Redirecting to main page.";
+header( "refresh:1;url=index.php" );
 exit;
 ?>

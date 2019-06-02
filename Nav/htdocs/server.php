@@ -1,7 +1,7 @@
 <?php
 function insert_into($link, $into, $columns, ...$values)
 {
-    echo func_num_args();
+    // echo func_num_args();
 
     // // Prepare an insert statement
     // $sql = "INSERT INTO posts (post_title, post_text, post_username, post_sub) VALUES (?, ?, ?, ?)";
@@ -37,23 +37,44 @@ function get_user_subs($user_id)
 
 }
 
+function mod_delete($link, $sub_id){
+    $sql = "DELETE FROM `subs` WHERE sub_id='".$sub_id."'";
+    mysqli_query($link, $sql);
 
-
-function get_user_friends($link, $user_id): mysqli_stmt
-{
-    $result = validate_select($link, "sub_id", "following", "user_id", $user_id);
-    
-
-    if (!$result)
-    {
-        return null;
-
-    } else {
-        return $result;
-
-    }
 }
 
+function is_user_following($link, $user_id, $sub_name)
+{
+    $sub_id = 0;
+    $sql = "SELECT * FROM `subs` WHERE sub_name='".$sub_name."'";
+    $result = mysqli_query($link, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+            if ($row['sub_name'] == $sub_name)
+                $sub_id = $row['sub_id'];
+
+        }
+    } else
+        return;
+
+    $result = validate_select($link, "*", "following");
+    $found = FALSE;
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+            if ($row['user_id'] == $user_id && $row['sub_id'] == $sub_id)
+                $found = TRUE;
+                     
+        }
+    } 
+    
+    if ($found) 
+        echo "<div id=\"subscribed\" title=\"yes\"></div>";
+     else 
+        echo "<div id=\"subscribed\" title=\"no\"></div>";
+    
+}
 
 function get_valid_args(...$args){
     $valid_args = 0;
@@ -67,41 +88,36 @@ function get_valid_args(...$args){
 
 }
 
+
+function load_posts($result, $root){
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+            $time = explode(" ", $row["created_at"]);
+            if ($root)
+                echo "<a href=\"comment.php?post=".$row["post_id"]."\">" . $time[0]. "(" . $time[1] . ") ". $row["post_username"] . ": ". $row["post_title"]. "<br></a>";
+            else
+                echo "<a href=\"../../comment.php?post=".$row["post_id"]."\">" . $time[0]. "(" . $time[1] . ") ". $row["post_username"] . ": ". $row["post_title"]. "<br></a>";
+
+        }
+      } else {
+        echo "0 results";
+
+      }
+}
+
 function validate_select($link, $select, $from, $where="", $is="")
 {
     $args = get_valid_args($select, $from, $where, $is);
-    echo ("<script>console.log(\"Valid args: ".$args."\");</script>");
 
     // Prepare a select statement
-    $sql = "SELECT ".$select." FROM `".$from."` WHERE ".$where." = '".$is."'";
+    $sql = "SELECT ".$select." FROM `".$from."` WHERE ".$where." = \'".$is."\'";
 
     if ($args == 2)
         $sql = "SELECT ".$select." FROM `".$from."`";
-        
-    $stmt = mysqli_prepare($link, $sql);
-    if($stmt){
-        // Attempt to execute the prepared statement
-        if(mysqli_stmt_execute($stmt)){
-            // Store result
-            $result = mysqli_stmt_store_result($stmt);
-                        
-            // Check if it exists, if yes then return true
-            if($result){ 
-                return $stmt;
 
-            } else{
-                // Close statement
-                mysqli_stmt_close($stmt);
-                return false;
-        
-            }
-        } else {
-            return false;
-        
-        }
-    } else {
-        echo "<br> Something went wrong, try again later. (in: 'server.php')";
+    $stmt = mysqli_query($link, $sql);
+    return $stmt;
 
-    }
 }
 ?>

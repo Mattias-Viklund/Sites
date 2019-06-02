@@ -28,35 +28,7 @@ $result = mysqli_query($link, $sql);
 <head>
     <meta charset="UTF-8">
     <title>Forum All</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="forum.css">
-    <style type="text/css">
-        body{ 
-            font: 14px sans-serif; 
-            text-align: center; 
-            
-        }
-
-        .sublist {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333333
-  
-        }
-
-        .subitem {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 16px;
-            text-decoration: none;
-            width: 20%;
-  
-        }
-    </style>
 </head>
 <body>
     <div class="page-header">

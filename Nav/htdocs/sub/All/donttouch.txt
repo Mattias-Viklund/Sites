@@ -1,0 +1,2 @@
+Default sub for root/index.php
+Don't delete or I will die of AIDS in 3 years.

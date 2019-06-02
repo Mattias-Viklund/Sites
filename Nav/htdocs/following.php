@@ -7,24 +7,23 @@ check_login();
 
 // Include config file
 require_once "config.php";
+require_once "server.php"; 
  
 // Check connection
 if (!$link) {
     die("Connection failed: " . mysqli_connect_error());
-    
 }
-
-$sql = "SELECT sub_name FROM subs;";
-$result = mysqli_query($link, $sql);
 
 ?>
 
 <html lang="en">
+
 <head>
+    <title>Post</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="stylesheet" href="forum.css">
-    <title>Subs</title>
 </head>
 
 <body>
@@ -39,32 +38,38 @@ $result = mysqli_query($link, $sql);
             <a href="logout.php">SIGN OUT</a>
         </div>
     </div>
-
     <div id="main">
         <button class="openbtn" id="openbtn" onclick="toggleNav()"></button>
         <div id="content">
-            <h1>Showing all subs.</h1>
+            <?php 
+                $sql = "SELECT * FROM `following` WHERE user_id='".$_SESSION['id']."'";
+                $result = mysqli_query($link, $sql);
+                $subs = mysqli_num_rows($result);
+                echo "You're following ".$subs." subs.<br>";
 
-            <ul class="sublist">
-                <?php 
                 if (mysqli_num_rows($result) > 0) {
                     while($row = mysqli_fetch_assoc($result)) {
-                        echo ("<li class=\"subitem\"><a href=./sub/".$row["sub_name"].">".$row["sub_name"]."</a></li>");
+                        if ($subs != 0)
+                        {
+                            $sql2 = "SELECT * FROM `subs` WHERE sub_id=".$row['sub_id']."";
+                            $result2 = mysqli_query($link, $sql2);
 
+                            if (mysqli_num_rows($result2) > 0) {
+                                while($row2 = mysqli_fetch_assoc($result2)) {
+                                    
+                                    echo "<a href=\"sub/".$row2['sub_name']."\">".$row2['sub_name']."</a><br>";
+
+                                }
+                            }
+                        }
                     }
                 } else {
-                echo "No subs";
-    
+                    echo "It would seem that you kind of suck.<br>Or something went wrong in the SQL query.<br>Either way I blame you.<br>";
+            
                 }
-
-                mysqli_close($link);
-                ?>
-            </ul>
-            <div>
-                <a href="forum.php" class="btn btn-primary">Home</a>
-                <a href="logout.php" class="btn btn-danger">Sign Out</a>
-            </div>
+            ?>
         </div>
+    </div>
     </div>
 </body>
 <footer>

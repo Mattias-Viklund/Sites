@@ -12,10 +12,10 @@ require_once "../../server.php";
 // Check connection
 if (!$link) {
     die("Connection failed: " . mysqli_connect_error());
+    
 }   
 
-$currentsub = str_replace("/sub/", "", dirname($_SERVER["PHP_SELF"]));
-$sql = "SELECT * FROM posts WHERE post_sub='".$currentsub."';";
+$sql = "SELECT * FROM posts;";
 $result = mysqli_query($link, $sql);
 
 ?>
@@ -25,7 +25,7 @@ $result = mysqli_query($link, $sql);
 
 <head>
     <meta charset="UTF-8">
-    <title><?php echo htmlspecialchars($currentsub); ?></title>
+    <title>All</title>
     <link rel="stylesheet" href="../../forum.css">
     <link rel="stylesheet" href="index.css">
 </head>
@@ -45,19 +45,14 @@ $result = mysqli_query($link, $sql);
     <div id="main">
         <button class="openbtn" id="openbtn" onclick="toggleNav()"></button>
         <div id="content">
-            <h1><b><?php echo htmlspecialchars($currentsub); ?></b>
-                <button id="subscribe" onclick="subscribe();">+Subscribe</button>
-            </h1>
-
+            <h1><b>All</b></h1>
             <?php
             load_posts($result, false);
-            is_user_following($link, $_SESSION['id'], $currentsub);
             mysqli_close($link);
             ?>
-
             <div>
-                <?php echo "<a href=\"../../newpost.php?sub=".$currentsub."\" class=\"btn btn-info\">Post New Text</a>"; ?>
-                <a href="../../logout.php" class="btn btn-danger">Sign Out</a>
+                <a href="../../newpost.php?sub=All">Post New Text</a>
+                <a href="../../logout.php">Sign Out</a>
             </div>
         </div>
     </div>
@@ -66,7 +61,6 @@ $result = mysqli_query($link, $sql);
 <footer>
     <script src="../../scripts/sidebar.js"></script>
     <script src="../../scripts/forum.js"></script>
-    <script src="../../scripts/sub.js"></script>
 </footer>
 
 </html>

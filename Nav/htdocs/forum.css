@@ -1,20 +1,29 @@
 body {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Arial', sans-serif;
   background-color: #FFF;
   color: #000;
   text-align: left;
-  font-size: 24px;
+  font: 14px;
   margin-top: 0px;
+  text-decoration: none;
+  list-style: none;
+  
+}
 
+a {
+  color: blue;
+    
+}
+
+a:visited {
+  color: blue;
+    
 }
 
 
 .post {
   font-size: 22px;
-}
-
-.container {
-  display: flex;
+  
 }
 
 .sidebar {
@@ -28,6 +37,7 @@ body {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 0px;
+
 }
 
 .sidebar h1 {
@@ -78,7 +88,7 @@ body {
 
 #main {
   transition: margin-left .5s;
-  padding-left: 48px;
+  padding-left: 12px;
 
 }
 
@@ -91,4 +101,20 @@ body {
   .sidebar a {
     font-size: 13px;
   }
+}
+
+.sublist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+}
+
+.subitem {
+  display: block;
+  color: white;
+  padding: 0px;
+  text-decoration: none;
+
 }

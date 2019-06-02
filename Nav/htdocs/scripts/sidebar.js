@@ -41,10 +41,12 @@ function toggleNav() {
   }
 }
 
+var sidebarSize="250px";
+
 function openNav() {
-  document.getElementById("sidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-  document.getElementById("openbtn").style.left = "250px";
+  document.getElementById("sidebar").style.width = sidebarSize;
+  document.getElementById("main").style.marginLeft = sidebarSize;
+  document.getElementById("openbtn").style.left = sidebarSize;
 
 }
 

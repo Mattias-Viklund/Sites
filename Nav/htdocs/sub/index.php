@@ -1,4 +1,3 @@
 <?php
-header("location: ../subs.php");
-
+    header("location: ../subs.php");
 ?>

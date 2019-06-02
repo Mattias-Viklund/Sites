@@ -73,13 +73,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if(mysqli_stmt_execute($stmt)){
                         create_sub($subname);
 
-                        console_log("Created Sub!.");
-
                         // Redirect to login page
                         header("location: forum.php");
 
                     } else{
-                        console_log("Something went wrong.");
                         echo "Something went wrong. Please try again later.";
 
                     }
@@ -93,7 +90,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Close connection
             mysqli_close($link);
         } else {
-            $subname_err = 'The sub name has to be lowecase without special characters.';
+            $subname_err = 'No spaces or wierd crap in the sub name plz.';
         
         }
     }
@@ -121,19 +118,7 @@ function create_sub($sub_name){
 <head>
     <meta charset="UTF-8">
     <title>Create Sub</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="forum.css">
-    <style type="text/css">
-        body {
-            font: 14px sans-serif;
-        }
-
-        .wrapper {
-            width: 350px;
-            padding: 20px;
-        }
-
-    </style>
 </head>
 
 <body>
