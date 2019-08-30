@@ -1,0 +1,7 @@
+C:\Users\elev\Documents\Visual Studio 2017\Projects\HTTL\HTTL\bin\Debug\HTTL.exe.config
+C:\Users\elev\Documents\Visual Studio 2017\Projects\HTTL\HTTL\bin\Debug\HTTL.exe
+C:\Users\elev\Documents\Visual Studio 2017\Projects\HTTL\HTTL\bin\Debug\HTTL.pdb
+C:\Users\elev\Documents\Visual Studio 2017\Projects\HTTL\HTTL\obj\Debug\HTTL.csprojAssemblyReference.cache
+C:\Users\elev\Documents\Visual Studio 2017\Projects\HTTL\HTTL\obj\Debug\HTTL.csproj.CoreCompileInputs.cache
+C:\Users\elev\Documents\Visual Studio 2017\Projects\HTTL\HTTL\obj\Debug\HTTL.exe
+C:\Users\elev\Documents\Visual Studio 2017\Projects\HTTL\HTTL\obj\Debug\HTTL.pdb

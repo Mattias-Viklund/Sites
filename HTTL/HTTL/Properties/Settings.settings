@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HTTL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="templateExtension" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.htt</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
