@@ -296,3 +296,29 @@
 [Thu May 23 13:01:12.418764 2019] [mpm_winnt:notice] [pid 16236:tid 820] AH00422: Parent: Received shutdown signal -- Shutting down the server.
 [Thu May 23 13:01:14.439015 2019] [mpm_winnt:notice] [pid 10028:tid 224] AH00364: Child: All worker threads have exited.
 [Thu May 23 13:01:14.733916 2019] [mpm_winnt:notice] [pid 16236:tid 820] AH00430: Parent: Child process 10028 exited successfully.
+[Tue Aug 27 13:09:19.526832 2019] [mpm_winnt:notice] [pid 21404:tid 816] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Tue Aug 27 13:09:19.527596 2019] [mpm_winnt:notice] [pid 21404:tid 816] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Tue Aug 27 13:09:19.527596 2019] [core:notice] [pid 21404:tid 816] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Tue Aug 27 13:09:19.529469 2019] [mpm_winnt:notice] [pid 21404:tid 816] AH00418: Parent: Created child process 8200
+[Tue Aug 27 13:09:19.939375 2019] [mpm_winnt:notice] [pid 8200:tid 672] AH00354: Child: Starting 150 worker threads.
+[Tue Aug 27 14:06:57.580303 2019] [php7:warn] [pid 8200:tid 1968] [client 127.0.0.1:54231] PHP Warning:  include(/Base/base.php): failed to open stream: No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\index.php on line 1
+[Tue Aug 27 14:06:57.580303 2019] [php7:warn] [pid 8200:tid 1968] [client 127.0.0.1:54231] PHP Warning:  include(): Failed opening '/Base/base.php' for inclusion (include_path='C:\\xampp\\php\\PEAR') in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\index.php on line 1
+[Tue Aug 27 14:07:14.426379 2019] [php7:warn] [pid 8200:tid 1968] [client 127.0.0.1:54251] PHP Warning:  include(/Base/base.php): failed to open stream: No such file or directory in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\index.php on line 1
+[Tue Aug 27 14:07:14.426379 2019] [php7:warn] [pid 8200:tid 1968] [client 127.0.0.1:54251] PHP Warning:  include(): Failed opening '/Base/base.php' for inclusion (include_path='C:\\xampp\\php\\PEAR') in C:\\Users\\elev\\Desktop\\Sites\\Nav\\htdocs\\index.php on line 1
+[Thu Aug 29 12:16:44.275554 2019] [core:warn] [pid 3772:tid 668] AH00098: pid file C:/Users/elev/Desktop/Sites/Nav/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Aug 29 12:16:44.391415 2019] [mpm_winnt:notice] [pid 3772:tid 668] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Thu Aug 29 12:16:44.391415 2019] [mpm_winnt:notice] [pid 3772:tid 668] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Thu Aug 29 12:16:44.391415 2019] [core:notice] [pid 3772:tid 668] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Thu Aug 29 12:16:44.407032 2019] [mpm_winnt:notice] [pid 3772:tid 668] AH00418: Parent: Created child process 6016
+[Thu Aug 29 12:16:45.223566 2019] [mpm_winnt:notice] [pid 6016:tid 632] AH00354: Child: Starting 150 worker threads.
+[Thu Aug 29 12:17:53.006406 2019] [mpm_winnt:notice] [pid 3772:tid 668] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu Aug 29 12:17:55.051967 2019] [mpm_winnt:notice] [pid 6016:tid 632] AH00364: Child: All worker threads have exited.
+[Thu Aug 29 12:17:55.083212 2019] [mpm_winnt:notice] [pid 3772:tid 668] AH00430: Parent: Child process 6016 exited successfully.
+[Thu Aug 29 12:18:26.422897 2019] [mpm_winnt:notice] [pid 3492:tid 740] AH00455: Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10 configured -- resuming normal operations
+[Thu Aug 29 12:18:26.422897 2019] [mpm_winnt:notice] [pid 3492:tid 740] AH00456: Apache Lounge VC15 Server built: Aug 15 2018 11:10:17
+[Thu Aug 29 12:18:26.422897 2019] [core:notice] [pid 3492:tid 740] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Thu Aug 29 12:18:26.430920 2019] [mpm_winnt:notice] [pid 3492:tid 740] AH00418: Parent: Created child process 6240
+[Thu Aug 29 12:18:27.316562 2019] [mpm_winnt:notice] [pid 6240:tid 716] AH00354: Child: Starting 150 worker threads.
+[Fri Aug 30 13:20:14.080517 2019] [php7:error] [pid 6240:tid 1972] [client 127.0.0.1:49162] script 'C:/Users/elev/Desktop/Sites/Nav/htdocs/testing.php' not found or unable to stat
+[Fri Aug 30 13:20:47.373585 2019] [php7:error] [pid 6240:tid 1972] [client 127.0.0.1:49170] script 'C:/Users/elev/Desktop/Sites/Nav/htdocs/testing.php' not found or unable to stat
+[Fri Aug 30 13:20:48.148232 2019] [php7:error] [pid 6240:tid 1972] [client 127.0.0.1:49170] script 'C:/Users/elev/Desktop/Sites/Nav/htdocs/testing.php' not found or unable to stat

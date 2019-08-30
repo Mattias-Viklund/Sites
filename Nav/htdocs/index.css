@@ -24,14 +24,14 @@ footer {
 }
 
 /* Add a black background color to the top navigation */
-.topnav {
+#navbar {
     background-color: #111;
     overflow: hidden;
 
 }
   
 /* Style the links inside the navigation bar */
-.topnav a {
+#navbar a {
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -42,14 +42,14 @@ footer {
 }
   
 /* Change the color of links on hover */
-.topnav a:hover {
+#navbar a:hover {
     background-color: #C6C2BA;
     color: black;
 
 }
   
  /* Add a color to the active/current link */
-.topnav a.active {
+ #navbar a.active {
     background-color: #DAB66C;
     color: white;
 
