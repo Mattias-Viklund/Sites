@@ -5,3 +5,9 @@ C:\Users\elev\Documents\Visual Studio 2017\Projects\HTTL\HTTL\obj\Debug\HTTL.csp
 C:\Users\elev\Documents\Visual Studio 2017\Projects\HTTL\HTTL\obj\Debug\HTTL.csproj.CoreCompileInputs.cache
 C:\Users\elev\Documents\Visual Studio 2017\Projects\HTTL\HTTL\obj\Debug\HTTL.exe
 C:\Users\elev\Documents\Visual Studio 2017\Projects\HTTL\HTTL\obj\Debug\HTTL.pdb
+C:\Users\Mew_\Documents\GitHub\Sites\HTTL\HTTL\bin\Debug\HTTL.exe.config
+C:\Users\Mew_\Documents\GitHub\Sites\HTTL\HTTL\bin\Debug\HTTL.exe
+C:\Users\Mew_\Documents\GitHub\Sites\HTTL\HTTL\bin\Debug\HTTL.pdb
+C:\Users\Mew_\Documents\GitHub\Sites\HTTL\HTTL\obj\Debug\HTTL.csprojAssemblyReference.cache
+C:\Users\Mew_\Documents\GitHub\Sites\HTTL\HTTL\obj\Debug\HTTL.exe
+C:\Users\Mew_\Documents\GitHub\Sites\HTTL\HTTL\obj\Debug\HTTL.pdb
