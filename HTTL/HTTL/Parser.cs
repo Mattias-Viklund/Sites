@@ -14,14 +14,43 @@ namespace HTTL
         private Dictionary<string, string[]> loadedTemplates = new Dictionary<string, string[]>();
         private string directory;
 
+        public static string[] ValidExtensions;
+        public static bool Initialized;
+
         public Parser(string directory)
         {
             this.directory = directory;
 
-            string[] directories = new string[1];  
+            string[] directories = new string[1];
             directories[0] = directory;
 
             TraverseDirectoriesAndAddFiles(directories);
+
+        }
+
+        public static void Initialize()
+        {
+            if (Initialized)
+                return;
+
+            string[] validExtensions = Settings.Default.validExtensions.Split(',');
+            ValidExtensions = validExtensions;
+
+        }
+
+        public static bool IsValidExtension(string pathExtension)
+        {
+            if (!Initialized)
+                Initialize();
+
+            foreach (string extension in ValidExtensions)
+            {
+                if (pathExtension == extension)
+                    return true;
+
+            }
+
+            return false;
 
         }
 
@@ -32,9 +61,10 @@ namespace HTTL
 
             for (int i = 0; i < directories.Length; i++)
             {
-                foreach (string directory in Directory.GetFiles(directories[i]))
+                foreach (string file in Directory.GetFiles(directories[i]))
                 {
-                    FilesInDirectory.Add(directory);
+                    string extension = Path.GetExtension(file);
+                    FilesInDirectory.Add(file);
 
                 }
                 TraverseDirectoriesAndAddFiles(Directory.GetDirectories(directories[i]), maxDepth, currentDepth + 1);
@@ -49,6 +79,8 @@ namespace HTTL
 
             ParseTemplates(templates);
             ParseWebFiles(webFiles);
+
+            PrintErrors();
 
         }
 
@@ -81,12 +113,19 @@ namespace HTTL
 
             foreach (string s in webFiles)
             {
-                Page p = new Page(s);
+                string output = GetOutputPath(s);
+                Page p = new Page(s, output);
+
+                if (p.Saved)
+                {
+                    continue;
+
+                }
 
                 if (p.Template == null)
                 {
-                    Errors.Add("File "+s+" does not contain a template header. Copying as-is.");
-                    continue;
+                    Errors.Add("File " + s + " does not contain a template header. Copying as-is.");
+                    goto save;
 
                 }
 
@@ -95,21 +134,16 @@ namespace HTTL
                 {
                     p.ApplyTemplate(template);
                     pages.Add(p);
-                    p.Finish();
 
                 }
                 else
-                {
                     Errors.Add("Could not find template referenced in " + s + ", ignoring.");
-                    p.Finish();
 
-                }
-
+                save:
+                p.Finish();
                 if (p.Finished)
-                {
-                    p.Save(GetOutputPath(s));
+                    p.Save(output);
 
-                }
             }
         }
 

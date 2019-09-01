@@ -13,8 +13,9 @@ namespace HTTL
         private List<string> page = new List<string>();
         private List<Tuple<string, Tuple<string, int>>> foundTags = new List<Tuple<string, Tuple<string, int>>>();
         private Dictionary<string, Tuple<int, int>> region = new Dictionary<string, Tuple<int, int>>();
+        public bool Saved { get; private set; } = false;
 
-        public Page(string path)
+        public Page(string path, string outputPath)
         {
             if (!File.Exists(path))
                 return;
@@ -29,8 +30,18 @@ namespace HTTL
 
                 }
             }
-            ParsePage(page);
 
+            string extension = Path.GetExtension(path);
+            if (Parser.IsValidExtension(extension))
+                ParsePage(page);
+            else
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(outputPath));
+                File.Copy(path, outputPath, true);
+                Parser.Errors.Add("File "+path+" is not of any valid template type, copying as-is.");
+                Saved = true;
+
+            }
         }
 
         private void ParsePage(List<string> file)
@@ -148,7 +159,7 @@ namespace HTTL
 
         public void Save(string path)
         {
-            if (valid)
+            if (Finished)
             {
                 using (StreamWriter sw = new StreamWriter(path))
                 {
@@ -158,6 +169,8 @@ namespace HTTL
 
                     }
                 }
+                Saved = true;
+
             }
         }
 
@@ -185,7 +198,11 @@ namespace HTTL
 
             if (identifier.Length == 0)
             {
-                Parser.Errors.Add("No identifier found at line " + lineNumber);
+                if (line != HTTLTokens.End)
+                {
+                    Parser.Errors.Add("No identifier found at line " + lineNumber);
+
+                }
                 return "";
 
             }
@@ -263,7 +280,8 @@ namespace HTTL
             if (page.Count == 0)
                 valid = false;
 
-            Finished = true;
+            if (valid)
+                Finished = true;
 
         }
     }

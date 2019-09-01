@@ -3,7 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="templateExtension" Type="System.String" Scope="User">
-      <Value Profile="(Default)">.htt</Value>
+      <Value Profile="(Default)">.ttl</Value>
+    </Setting>
+    <Setting Name="validExtensions" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.html,.php</Value>
     </Setting>
   </Settings>
 </SettingsFile>
