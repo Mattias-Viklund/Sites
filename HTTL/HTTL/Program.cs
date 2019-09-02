@@ -37,7 +37,7 @@ namespace HTTL
             {
                 if (!debug)
                 {
-                    Console.WriteLine("Usage: HTTL.exe [Input Directory], [Output Directory]");
+                    Console.WriteLine("Usage: HTTL.exe [Input Directory], [Output Directory], <[-C] Close After Finishing>");
                     return;
 
                 }
@@ -56,7 +56,7 @@ namespace HTTL
             sw.Stop();
 
             Console.WriteLine("Build finished!");
-            Console.WriteLine("Total " + sw.ElapsedMilliseconds.ToString() + "ms.");
+            Console.WriteLine("Time elapsed " + sw.ElapsedMilliseconds.ToString() + "ms.");
 
             if (!close)
                 Console.ReadLine();

@@ -161,6 +161,8 @@ namespace HTTL
         {
             if (Finished)
             {
+                Directory.CreateDirectory(Path.GetDirectoryName(path));
+
                 using (StreamWriter sw = new StreamWriter(path))
                 {
                     foreach (string line in page)
