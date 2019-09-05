@@ -61,12 +61,15 @@ namespace HTTL
 
             for (int i = 0; i < directories.Length; i++)
             {
-                Console.WriteLine("Searching directory '"+directories[i]+"'.");
+                if (Program.ExtendedOutput)
+                    Console.WriteLine("Searching directory '" + directories[i] + "'.");
                 foreach (string file in Directory.GetFiles(directories[i]))
                 {
                     string extension = Path.GetExtension(file);
                     FilesInDirectory.Add(file);
-                    Console.WriteLine("Found file '" + file+"'");
+
+                    if (Program.ExtendedOutput)
+                        Console.WriteLine("Found file '" + file + "'");
 
                 }
                 TraverseDirectoriesAndAddFiles(Directory.GetDirectories(directories[i]), maxDepth, currentDepth + 1);
@@ -153,7 +156,8 @@ namespace HTTL
         {
             string output = inputPath.Substring(Program.Input.Length, inputPath.Length - Program.Input.Length);
             output = Program.Output + output;
-            Console.WriteLine("Output path: " + inputPath);
+            if (Program.ExtendedOutput)
+                Console.WriteLine("Output path: " + inputPath);
             return output;
 
         }
