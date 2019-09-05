@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 // Hyper Text Template Language
 namespace HTTL
@@ -23,9 +24,10 @@ namespace HTTL
 
             if (args.Length >= 2)
             {
-                Console.WriteLine(args.Length+" arguments.");
+                Console.WriteLine(args.Length + " arguments.");
                 Input = args[0];
                 Output = args[1];
+
                 if (args.Length > 2)
                 {
                     switch (args[2])
@@ -58,8 +60,8 @@ namespace HTTL
 
             if (debug)
             {
-                Input = "C:\\Users\\Mew_\\Desktop\\Testing\\Docs";
-                Output = "C:\\Users\\Mew_\\Desktop\\Testing\\Build";
+                Input = "C:\\Users\\Mew_\\Documents\\GitHub\\Blog\\Blog";
+                Output = "C:\\Users\\Mew_\\Documents\\GitHub\\Blog\\Build";
 
             }
 
