@@ -36,9 +36,14 @@ namespace HTTL
                 ParsePage(page);
             else
             {
-                Directory.CreateDirectory(Path.GetDirectoryName(outputPath));
+                DirectoryInfo inf = Directory.CreateDirectory(Path.GetDirectoryName(outputPath));
                 File.Copy(path, outputPath, true);
                 Parser.Errors.Add("File "+path+" is not of any valid template type, copying as-is.");
+                //if (Program.ExtendedOutput)
+                //{
+                    Parser.Errors.Add("Output directory: "+inf.FullName);
+
+                //}
                 Saved = true;
 
             }
@@ -161,7 +166,8 @@ namespace HTTL
         {
             if (Finished)
             {
-                Directory.CreateDirectory(Path.GetDirectoryName(path));
+                DirectoryInfo inf = Directory.CreateDirectory(Path.GetDirectoryName(path));
+                Parser.Errors.Add("Output directory: " + inf.FullName);
 
                 using (StreamWriter sw = new StreamWriter(path))
                 {

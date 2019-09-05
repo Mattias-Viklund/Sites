@@ -13,6 +13,7 @@ namespace HTTL
         public static string Output { get; private set; }
         private static bool debug = false;
         private static bool close = false;
+        public static bool ExtendedOutput { get; private set; } = false;
 
         // Usage: HTTL.exe [Input Directory], [Output Directory]
         static void Main(string[] args)
@@ -22,14 +23,26 @@ namespace HTTL
 
             if (args.Length >= 2)
             {
+                Console.WriteLine(args.Length+" arguments.");
                 Input = args[0];
                 Output = args[1];
                 if (args.Length > 2)
                 {
                     switch (args[2])
                     {
-                        case "-c": close = true; break;
+                        case "-c": close = true; Console.WriteLine("(-c), Closing after finish."); break;
+                        case "-e": ExtendedOutput = true; Console.WriteLine("(-e), Extended output."); break;
 
+                    }
+
+                    if (args.Length > 3)
+                    {
+                        switch (args[3])
+                        {
+                            case "-c": close = true; Console.WriteLine("(-c), Closing after finish."); break;
+                            case "-e": ExtendedOutput = true; Console.WriteLine("(-e), Extended output."); break;
+
+                        }
                     }
                 }
             }
@@ -37,7 +50,7 @@ namespace HTTL
             {
                 if (!debug)
                 {
-                    Console.WriteLine("Usage: HTTL.exe [Input Directory], [Output Directory], <[-C] Close After Finishing>");
+                    Console.WriteLine("Usage: HTTL.exe [Input Directory], [Output Directory], <[-C] Close After Finishing> <[-E] Extended Output>");
                     return;
 
                 }
