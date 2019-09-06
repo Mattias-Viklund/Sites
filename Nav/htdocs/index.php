@@ -27,7 +27,6 @@ require_once("articles.php");
 $articles = articles_load($link);
 if (is_array($articles) || is_object($articles)) {
 foreach ($articles as $article) {
-echo '<p>' . $article["id"] . '</p>';
 echo '<p>' . $article["title"] . '</p>';
 echo '<img src="' . $article["thumbnail"] . '" height="256" width="256" alt="Click to open full image."">';
 
@@ -35,7 +34,7 @@ $parser->setText($article['content']);
 $parser->parse();
 $parsed = $parser->getParsed();
 
-echo '<p>' . $parsed . "</p>";
+echo '<p>' . nl2br($parsed) . "</p>";
 }
 }
 ?>
