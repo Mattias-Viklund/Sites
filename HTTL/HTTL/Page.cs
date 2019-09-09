@@ -8,6 +8,7 @@ namespace HTTL
     class Page
     {
         public string Template { get; private set; }
+        public int TemplateDepth { get; private set; } = 0
         public bool Finished { get; private set; } = false;
         private bool valid = true;
         private List<string> page = new List<string>();
@@ -224,6 +225,27 @@ namespace HTTL
             if (line.Substring(0, openPosition - 1) == HTTLTokens.TemplateToken.Substring(0, HTTLTokens.TemplateToken.IndexOf('(') - 1))
             {
                 Template = identifier;
+
+                int colon = line.IndexOf(':');
+                if (colon != -1)
+                {
+                    for (int i = colon+1; i< line.Length; i++)
+                    {
+                        char c = line[i];
+                        if (c != ' ')
+                        {
+                            int depth;
+                            int lineLength = line.Length;
+                            if (int.TryParse(line.Substring(i), out depth))
+                            {
+                                TemplateDepth = depth;
+                                break; 
+                            }                                     
+                        }
+
+                    }
+                }
+                
                 return "";
 
             }

@@ -12,7 +12,7 @@ namespace HTTL
     {
         public static string Input { get; private set; }
         public static string Output { get; private set; }
-        private static bool debug = false;
+        private static bool debug = true;
         private static bool close = false;
         public static bool ExtendedOutput { get; private set; } = false;
 
