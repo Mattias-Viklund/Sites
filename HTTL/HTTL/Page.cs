@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
 
 // Hyper Text Template Language
 namespace HTTL
@@ -8,7 +10,7 @@ namespace HTTL
     class Page
     {
         public string Template { get; private set; }
-        public int TemplateDepth { get; private set; } = 0
+        public int TemplateDepth { get; private set; } = 0;
         public bool Finished { get; private set; } = false;
         private bool valid = true;
         private List<string> page = new List<string>();
@@ -153,7 +155,21 @@ namespace HTTL
                 }
                 else
                 {
-                    file.Add(line);
+                    if (TemplateDepth != 0)
+                    {
+                        string href = HasLocalReference(line);
+                        if (href != null)
+                        {
+                            string newHref = GetLocalReference(href, TemplateDepth);
+                            line = ReplaceLocalReference(line, href, newHref);
+                            file.Add(line);
+
+                        }
+                        else
+                            file.Add(line);
+                    }
+                    else
+                        file.Add(line);
 
                 }
             }
@@ -229,7 +245,7 @@ namespace HTTL
                 int colon = line.IndexOf(':');
                 if (colon != -1)
                 {
-                    for (int i = colon+1; i< line.Length; i++)
+                    for (int i = colon + 1; i < line.Length; i++)
                     {
                         char c = line[i];
                         if (c != ' ')
@@ -239,18 +255,87 @@ namespace HTTL
                             if (int.TryParse(line.Substring(i), out depth))
                             {
                                 TemplateDepth = depth;
-                                break; 
-                            }                                     
+                                break;
+                            }
                         }
 
                     }
                 }
-                
+
                 return "";
 
             }
 
             return identifier;
+
+        }
+
+        private string GetLocalReference(string str, int depth)
+        {
+            if (depth == 0)
+                return str;
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < depth; i++)
+            {
+                sb.Append("../");
+
+            }
+
+            sb.Append(str);
+            return sb.ToString();
+
+        }
+
+        private string ReplaceLocalReference(string line, string origHref, string newHref)
+        {
+            return Regex.Replace(line, origHref, newHref);
+
+        }
+
+        private static string LocalReference = "href=";
+        private string HasLocalReference(string str)
+        {
+            if (str.Length == 0)
+                return null;
+
+            string[] test = str.Split();
+
+            if (test.Length == 0)
+                return null;
+
+            foreach (string s in test)
+            {
+                if (s.Length == 0)
+                    continue;
+
+                if (s[0] == LocalReference[0])
+                {
+                    if (s.ToLower().Contains(LocalReference))
+                    {
+                        string line = s;
+                        if (s.IndexOf('>') != -1)
+                        {
+                            line = s.Split('>')[0];
+
+                        }
+
+                        if (line.IndexOf('/') != -1)
+                            continue;
+
+                        int start = line.IndexOf('"');
+                        int end = line.LastIndexOf('"');
+                        if (start == end)
+                            continue;
+
+                        string a = line.Substring(start + 1, end - start - 1);
+                        return a;
+
+                    }
+                }
+            }
+
+            return null;
 
         }
 

@@ -10,3 +10,4 @@ C:\Users\elev\Desktop\Sites\HTTL\HTTL\bin\Release\HTTL.pdb
 C:\Users\elev\Desktop\Sites\HTTL\HTTL\obj\Release\HTTL.csproj.CoreCompileInputs.cache
 C:\Users\elev\Desktop\Sites\HTTL\HTTL\obj\Release\HTTL.exe
 C:\Users\elev\Desktop\Sites\HTTL\HTTL\obj\Release\HTTL.pdb
+C:\Users\elev\Desktop\Sites\HTTL\HTTL\obj\Release\HTTL.csprojAssemblyReference.cache

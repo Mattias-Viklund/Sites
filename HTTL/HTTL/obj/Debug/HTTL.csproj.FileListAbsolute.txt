@@ -11,3 +11,10 @@ C:\Users\Mew_\Documents\GitHub\Sites\HTTL\HTTL\bin\Debug\HTTL.pdb
 C:\Users\Mew_\Documents\GitHub\Sites\HTTL\HTTL\obj\Debug\HTTL.csprojAssemblyReference.cache
 C:\Users\Mew_\Documents\GitHub\Sites\HTTL\HTTL\obj\Debug\HTTL.exe
 C:\Users\Mew_\Documents\GitHub\Sites\HTTL\HTTL\obj\Debug\HTTL.pdb
+C:\Users\elev\Desktop\Sites\HTTL\HTTL\bin\Debug\HTTL.exe.config
+C:\Users\elev\Desktop\Sites\HTTL\HTTL\bin\Debug\HTTL.exe
+C:\Users\elev\Desktop\Sites\HTTL\HTTL\bin\Debug\HTTL.pdb
+C:\Users\elev\Desktop\Sites\HTTL\HTTL\obj\Debug\HTTL.csprojAssemblyReference.cache
+C:\Users\elev\Desktop\Sites\HTTL\HTTL\obj\Debug\HTTL.csproj.CoreCompileInputs.cache
+C:\Users\elev\Desktop\Sites\HTTL\HTTL\obj\Debug\HTTL.exe
+C:\Users\elev\Desktop\Sites\HTTL\HTTL\obj\Debug\HTTL.pdb
