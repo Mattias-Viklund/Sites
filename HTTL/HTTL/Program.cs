@@ -60,8 +60,8 @@ namespace HTTL
 
             if (debug)
             {
-                Input = "C:\\Users\\elev\\Desktop\\Blog\\Blog";
-                Output = "C:\\Users\\elev\\Desktop\\Blog\\Build";
+                Input = "C:\\Users\\Mew_\\Documents\\GitHub\\Blog\\blog";
+                Output = "C:\\Users\\Mew_\\Documents\\GitHub\\Blog\\Build";
 
             }
 
