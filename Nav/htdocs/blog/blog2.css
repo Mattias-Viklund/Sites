@@ -1,0 +1,133 @@
+body {
+    color: #c6c2ba;
+    background-color: #000;
+    font-family: 'Merriweather', serif;
+
+}   
+
+.navtable {
+    width: 100;
+    display: table;
+}
+
+.navitem {
+    display: table-cell;   
+}
+
+.navitem a{
+    display: block;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+a {
+    color: #dab66c;
+    text-decoration: none;
+
+}
+
+.post {
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.links {
+    padding: 25px;
+    display: block;
+    text-align: center;
+
+}
+
+.links a {
+    margin-right: 15px;
+}
+
+hr {
+    background-color: #FFF;
+    display: grid;
+}
+
+.sidebar {
+    border-right: solid 1px #FFF;
+    width: 20%;
+}
+
+.sidebar ul {
+    list-style: none;
+    display: inline;
+    padding: 0px 50px 0px 0px;
+
+}
+
+.post h3 {
+    color: #79aadd;
+}
+
+.post h5 {
+    color: #496685;
+}
+
+.admin_tools {
+    display: inline;
+    padding: 5px 16px 10px 0px;
+
+}
+
+.admin_tools a {
+    padding: 5px 0px 5px 10px;
+
+}
+
+.m-dark {
+    background-color: #101010;
+
+}
+
+.m-dark .navbar-brand {
+    color: #FFF;
+
+}
+
+.m-light {
+    border: 1px solid #FFF;
+    background-color: #101010;
+    color: #FFF;
+    stroke: #FFF;
+
+}
+
+.m-shade {
+    text-shadow: 2px 2px 8px #79aadd;
+}
+
+.nopad {
+    padding: 0px 0px 10px 0px;
+
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+@media only screen and (max-width: 768px) {
+    .title-img {
+        display: none;
+
+    }
+}
+
+@media only screen and (max-width: 1014px) {
+    .sidebar {
+        border: none;
+    }
+
+    .m-content {
+        /* width: 100%; */
+        flex: 0 0 100%;
+        max-width: 100%;
+
+    }
+}

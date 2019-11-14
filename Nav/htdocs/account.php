@@ -8,6 +8,9 @@ $is_user = true;
 $is_admin = (($_SESSION["acctype"] == 0) ? true : false);
 }
 ?>
+<?php
+require_once("session.php");
+?>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,12 +18,7 @@ $is_admin = (($_SESSION["acctype"] == 0) ? true : false);
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="blog/blog2.css">
-<title>Welcome Home.</title>
-<style>
-.row {
-height: 100%;
-}
-</style>
+<title>Account</title>
 </head>
 <body>
 <a href="index.php"><img class="title-img" src="img/title.png" width="512px" /></a>
@@ -37,17 +35,14 @@ height: 100%;
 </ul>
 </div>
 </nav><br>
+<p>Nothing Here</p>
 <div class="container-fluid">
 <div class="row">
 <div class="col sidebar">
-<h3 class="m-shade">Welcome Home</h3>
-<p>Welcome to Exedump, my hobby project.</p>
-<br>
-<p>I usually don't do much other than school and play games.</p>
-<p>But on the offchance I actually do something.<br>It's likely you can find it at my <a href="https://github.com/mattias-viklund">Github</a>.</p>
-<p>But if you're looking for something way deeper but also truly meaningless, head over to the <a href="blog/index.php">Blog</a> section, and take a peek.</p>
+<p>Nothing Here</p>
 </div>
 <div class="col-sm-10 m-content">
+<p>Nothing Here</p>
 </div>
 </div>
 </div>

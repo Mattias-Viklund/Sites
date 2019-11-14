@@ -74,14 +74,6 @@ footer {
     overflow: hidden;
 
 }
-
-/* Add a black background color to the top navigation */
-#catbar {
-    background-color: #111;
-    overflow: hidden;
-
-}
-  
   
 /* Style the links inside the navigation bar */
 #navbar a {
@@ -93,8 +85,7 @@ footer {
     display: block;
 
 }
-
-
+  
 /* Change the color of links on hover */
 #navbar a:hover {
     background-color: #C6C2BA;
@@ -107,28 +98,4 @@ footer {
     background-color: #DAB66C;
     color: white;
 
-}
-
-.catbar {
-    width: 200px;
-    height: 150px;
-    overflow-y: auto;
-    
-}
-  
-.catbar a {
-    background-color: #eee; /* Grey background color */
-    color: black; /* Black text color */
-    display: block; /* Make the links appear below each other */
-    padding: 12px; /* Add some padding */
-    text-decoration: none; /* Remove underline from links */
-}
-  
-.catbar a:hover {
-    background-color: #ccc; /* Dark grey background on mouse-over */
-}
-  
-.catbar a.active {
-    background-color: #4CAF50; /* Add a green color to the "active/current" link */
-    color: white;
 }
