@@ -17,9 +17,11 @@ namespace HTTL
         private List<Tuple<string, Tuple<string, int>>> foundTags = new List<Tuple<string, Tuple<string, int>>>();
         private Dictionary<string, Tuple<int, int>> region = new Dictionary<string, Tuple<int, int>>();
         public bool Saved { get; private set; } = false;
+        private string path;
 
         public Page(string path, string outputPath)
         {
+            this.path = path;
             if (!File.Exists(path))
                 return;
 
@@ -71,8 +73,15 @@ namespace HTTL
             {
                 for (int i = 0; i + 1 < foundTags.Count; i += 2)
                 {
-                    region.Add(foundTags[i].Item1, new Tuple<int, int>(foundTags[i].Item2.Item2, foundTags[i + 1].Item2.Item2));
+                    try
+                    {
+                        region.Add(foundTags[i].Item1, new Tuple<int, int>(foundTags[i].Item2.Item2, foundTags[i + 1].Item2.Item2));
+                    }
+                    catch
+                    {
+                        Parser.Errors.Add("Found same tag twice in "+path);
 
+                    }
                 }
             }
         }
